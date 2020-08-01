@@ -1,0 +1,112 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005-006 main.valor
+007-008 main.control
+009-00C main.a
+00D-010 main.b
+011-014 main.c
+015-018 main.limite_temperatura
+019-01C main.rt
+01D-020 main.et
+021-024 main.it
+025-028 main.dt
+029-02C main.yt
+02D-030 main.ut
+031-034 main.it0
+035-038 main.et0
+039-03C main.max
+03D-040 main.min
+041     @delay_ms1.P1
+041-044 @FLT.P2
+041-044 @MULFF.P3
+041-042 @ITOF.P4
+041-044 @SFTOI.P5
+041     main.@SCRATCH1
+042     main.@SCRATCH2
+043-044 @MUL1616.P1
+043     main.@SCRATCH3
+044     main.@SCRATCH4
+045-048 @MULFF.P1
+045-048 @FLT.P2
+045-048 @ADDFF.P3
+045-046 @MUL1616.P4
+047     @MUL1616.@SCRATCH1
+049-04C @ADDFF.P1
+049     @MULFF.@SCRATCH1
+049     @FLT.@SCRATCH1
+04A     @MULFF.@SCRATCH2
+04A     @FLT.@SCRATCH2
+04B     @MULFF.@SCRATCH3
+04D     @ADDFF.@SCRATCH1
+04E     @ADDFF.@SCRATCH2
+04F     @ADDFF.@SCRATCH3
+050     @ADDFF.@SCRATCH4
+051     @ADDFF.@SCRATCH5
+052     @ADDFF.@SCRATCH6
+053     @ADDFF.@SCRATCH7
+054     @ADDFF.@SCRATCH8
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0468  @delay_ms1
+0492  main
+0004  @MUL1616
+0024  @ITOF
+005C  @ADDFF
+02C6  @MULFF
+03B8  @FLT
+042E  @SFTOI
+0492  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    C:\Users\Carlos-Tonche\Desktop\To FEO\PID\
+
+Project Files:
+    main.c
+    ..\..\..\..\..\Program Files (x86)\PICC\Devices\18f4550.h
+
+Units:
+    C:\Users\Carlos-Tonche\Desktop\To FEO\PID\main (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX32:      main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.PJT
+    Call Tree:   main.tre
+    Statistics:  main.sta

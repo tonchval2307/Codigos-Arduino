@@ -1,0 +1,233 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4550 ]
+[d frameptr 4065 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"32 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"20 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"44 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+"28 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwtoft.c
+[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Users\Carlos-Tonche\Desktop\To FEO\PID\PID.X\pid.c
+[v _PWM_Max_Duty PWM_Max_Duty `(i  1 e 2 0 ]
+"96
+[v _PWM1_Init PWM1_Init `(i  1 e 2 0 ]
+"106
+[v _PWM1_Duty PWM1_Duty `(i  1 e 2 0 ]
+"125
+[v _PWM1_Start PWM1_Start `(i  1 e 2 0 ]
+"172
+[v _ADC_Init ADC_Init `(v  1 e 1 0 ]
+"178
+[v _ADC_Read ADC_Read `(ui  1 e 2 0 ]
+"191
+[v _main main `(v  1 e 1 0 ]
+"6696 C:\Program Files (x86)\Microchip\xc8\v1.38\include\pic18f4550.h
+[v _CCPR2L CCPR2L `VEuc  1 e 1 @4027 ]
+"6875
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @4030 ]
+"6957
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+"7047
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
+"7171
+[v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
+"7177
+[v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
+"7680
+[v _PR2 PR2 `VEuc  1 e 1 @4043 ]
+"9351
+[v _CCP1M2 CCP1M2 `VEb  1 e 0 @32234 ]
+"9353
+[v _CCP1M3 CCP1M3 `VEb  1 e 0 @32235 ]
+"9369
+[v _CCP2M2 CCP2M2 `VEb  1 e 0 @32210 ]
+"9371
+[v _CCP2M3 CCP2M3 `VEb  1 e 0 @32211 ]
+"9809
+[v _GO_nDONE GO_nDONE `VEb  1 e 0 @32273 ]
+"10481
+[v _T2CKPS0 T2CKPS0 `VEb  1 e 0 @32336 ]
+"10483
+[v _T2CKPS1 T2CKPS1 `VEb  1 e 0 @32337 ]
+"10531
+[v _TMR2ON TMR2ON `VEb  1 e 0 @32338 ]
+"10585
+[v _TRISC1 TRISC1 `VEb  1 e 0 @31905 ]
+"10587
+[v _TRISC2 TRISC2 `VEb  1 e 0 @31906 ]
+"90 C:\Users\Carlos-Tonche\Desktop\To FEO\PID\PID.X\pid.c
+[v _freq freq `l  1 e 4 0 ]
+"191
+[v _main main `(v  1 e 1 0 ]
+{
+"271
+[v main@err err `i  1 a 2 82 ]
+"274
+[v main@ct ct `i  1 a 2 80 ]
+"272
+[v main@it it `i  1 a 2 78 ]
+"273
+[v main@dt dt `i  1 a 2 72 ]
+"270
+[v main@dato dato `i  1 a 2 70 ]
+"269
+[v main@sp sp `i  1 a 2 68 ]
+"264
+[v main@it0 it0 `i  1 a 2 76 ]
+[v main@et0 et0 `i  1 a 2 74 ]
+"263
+[v main@ti ti `i  1 a 2 66 ]
+"262
+[v main@td td `i  1 a 2 64 ]
+"261
+[v main@kp kp `i  1 a 2 62 ]
+"291
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"125 C:\Users\Carlos-Tonche\Desktop\To FEO\PID\PID.X\pid.c
+[v _PWM1_Start PWM1_Start `(i  1 e 2 0 ]
+{
+"141
+} 0
+"96
+[v _PWM1_Init PWM1_Init `(i  1 e 2 0 ]
+{
+[v PWM1_Init@fre fre `l  1 p 4 14 ]
+"100
+} 0
+"106
+[v _PWM1_Duty PWM1_Duty `(i  1 e 2 0 ]
+{
+[v PWM1_Duty@duty duty `ui  1 p 2 56 ]
+"114
+} 0
+"28 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwtoft.c
+[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+{
+[v ___lwtoft@c c `ui  1 p 2 8 ]
+"31
+} 0
+"44 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+{
+"47
+[v ___fttol@lval lval `ul  1 a 4 51 ]
+"46
+[v ___fttol@exp1 exp1 `uc  1 a 1 55 ]
+[v ___fttol@sign1 sign1 `uc  1 a 1 50 ]
+"44
+[v ___fttol@f1 f1 `f  1 p 3 41 ]
+"73
+} 0
+"62 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+{
+"65
+[v ___ftmul@f3_as_product f3_as_product `um  1 a 3 36 ]
+"64
+[v ___ftmul@sign sign `uc  1 a 1 40 ]
+[v ___ftmul@cntr cntr `uc  1 a 1 39 ]
+[v ___ftmul@exp exp `uc  1 a 1 35 ]
+"62
+[v ___ftmul@f1 f1 `f  1 p 3 26 ]
+[v ___ftmul@f2 f2 `f  1 p 3 29 ]
+"157
+} 0
+"54 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+{
+"60
+[v ___ftdiv@f3 f3 `f  1 a 3 21 ]
+"59
+[v ___ftdiv@sign sign `uc  1 a 1 25 ]
+[v ___ftdiv@exp exp `uc  1 a 1 24 ]
+[v ___ftdiv@cntr cntr `uc  1 a 1 20 ]
+"54
+[v ___ftdiv@f1 f1 `f  1 p 3 11 ]
+[v ___ftdiv@f2 f2 `f  1 p 3 14 ]
+"86
+} 0
+"32 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
+{
+"34
+[v ___awtoft@sign sign `uc  1 a 1 23 ]
+"32
+[v ___awtoft@c c `i  1 p 2 20 ]
+"42
+} 0
+"62 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+{
+[v ___ftpack@arg arg `um  1 p 3 0 ]
+[v ___ftpack@exp exp `uc  1 p 1 3 ]
+[v ___ftpack@sign sign `uc  1 p 1 4 ]
+"86
+} 0
+"91 C:\Users\Carlos-Tonche\Desktop\To FEO\PID\PID.X\pid.c
+[v _PWM_Max_Duty PWM_Max_Duty `(i  1 e 2 0 ]
+{
+"95
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+{
+"11
+[v ___aldiv@quotient quotient `l  1 a 4 10 ]
+"12
+[v ___aldiv@sign sign `uc  1 a 1 9 ]
+[v ___aldiv@counter counter `uc  1 a 1 8 ]
+"8
+[v ___aldiv@dividend dividend `l  1 p 4 0 ]
+[v ___aldiv@divisor divisor `l  1 p 4 4 ]
+"42
+} 0
+"178 C:\Users\Carlos-Tonche\Desktop\To FEO\PID\PID.X\pid.c
+[v _ADC_Read ADC_Read `(ui  1 e 2 0 ]
+{
+[v ADC_Read@channel channel `uc  1 a 1 wreg ]
+[v ADC_Read@channel channel `uc  1 a 1 wreg ]
+"180
+[v ADC_Read@channel channel `uc  1 a 1 4 ]
+"189
+} 0
+"172
+[v _ADC_Init ADC_Init `(v  1 e 1 0 ]
+{
+"176
+} 0

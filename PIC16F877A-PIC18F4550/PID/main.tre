@@ -1,0 +1,17 @@
+읕main
+   읕main  0/840  Ram=64
+      쳐??0??
+      쳐@MUL1616  0/32  Ram=5
+      쳐@ITOF  0/56  Ram=2
+      쳐@ADDFF  0/618  Ram=16
+      쳐@MULFF  0/242  Ram=11
+      쳐@ADDFF  0/618  Ram=16
+      쳐@ADDFF  0/618  Ram=16
+      쳐@MULFF  0/242  Ram=11
+      쳐@MULFF  0/242  Ram=11
+      쳐@ADDFF  0/618  Ram=16
+      쳐@ADDFF  0/618  Ram=16
+      쳐@FLT  0/118  Ram=10
+      쳐@FLT  0/118  Ram=10
+      쳐@SFTOI  0/58  Ram=4
+      읕@delay_ms1  0/42  Ram=1

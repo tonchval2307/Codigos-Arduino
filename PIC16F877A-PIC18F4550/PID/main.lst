@@ -1,0 +1,406 @@
+CCS PCH C Compiler, Version 4.104, 5967               15-Dec-16 21:07
+
+               Filename: C:\Users\Carlos-Tonche\Desktop\To FEO\PID\main.lst
+
+               ROM used: 2010 bytes (6%)
+                         Largest free fragment is 30758
+               RAM used: 68 (3%) at main() level
+                         84 (4%) worst case
+               Stack:    1 locations
+
+*
+0000:  GOTO   0492
+.................... #Include <18f4550.h>       //Archivo libreria del pic 18f4550 
+.................... //////// Standard Header file for the PIC18F4550 device //////////////// 
+.................... #device PIC18F4550 
+.................... #list 
+....................  
+.................... #Device ADC = 10 
+....................  
+.................... // Configuracion para USB con cristal oscilador de 4MHz 
+.................... #Fuses XTPLL //Se habilita le Demux para dividir la frecuencia de salida del PLL de 96MHz como Salida 
+.................... #fuses PLL1 //Se divide la frecuencia del PLL entre 1 comno es de 4 MHz la entrada del PLL para generar 96 MHz no es necesario dividirla 
+.................... #Fuses USBDIV //Se selecciona la salida de 48Mhz para la operacion de USB transceiver 
+.................... #Fuses CPUDIV1 //Se selecciona la division de la frecuencia /2 del PLLUSB que da 48MHz 
+.................... #Fuses VREGEN  //Se Habilita el regulador de 3.3v interno del PIC 
+.................... #Fuses MCLR    //Se habilita el MCLR 
+.................... #Fuses NOWDT   //Se dehabilita el watchdog timer 
+.................... #Fuses NOPROTECT     //Se dehabilita la porteccion de codigo 
+.................... #Fuses NOLVP         //Se dehabilita la programacion por bajo voltaje 
+.................... #Fuses NODEBUG       //Se habilita le modo debug 
+.................... #Fuses NOPBADEN      //Se deshabilitan los canales analogicos del puerto B 
+....................  
+.................... #Use delay(clock = 48000000)     //freucencia de oscilador declarada en el compilador 
+0468:  CLRF   FEA
+046A:  MOVLW  41
+046C:  MOVWF  FE9
+046E:  MOVF   FEF,W
+0470:  BZ    048E
+0472:  MOVLW  0F
+0474:  MOVWF  01
+0476:  CLRF   00
+0478:  DECFSZ 00,F
+047A:  BRA    0478
+047C:  DECFSZ 01,F
+047E:  BRA    0476
+0480:  MOVLW  8F
+0482:  MOVWF  00
+0484:  DECFSZ 00,F
+0486:  BRA    0484
+0488:  NOP   
+048A:  DECFSZ FEF,F
+048C:  BRA    0472
+048E:  GOTO   07D6 (RETURN)
+....................  
+.................... //#Include <usb_cdc.h>             //Libreria de la comunicacion CDC 
+.................... //#Include <usb_desc_cdc.h>        //Librerias de descriptores para la conexion Cdc 
+.................... /* Designacion de etiquetas */ 
+....................  
+.................... #Define ledgrn PIN_D0 
+.................... #Define ledred PIN_D1 
+.................... #Define off output_low 
+.................... #Define on output_high 
+....................  
+.................... /* Declaracion de variables globales del programa   */ 
+....................  
+....................  
+.................... /* Inicion del programa   */ 
+.................... void main(void) 
+.................... { 
+0492:  CLRF   FF8
+0494:  BCF    FD0.7
+0496:  CLRF   FEA
+0498:  CLRF   FE9
+049A:  MOVF   FC1,W
+049C:  ANDLW  C0
+049E:  IORLW  0F
+04A0:  MOVWF  FC1
+04A2:  MOVLW  07
+04A4:  MOVWF  FB4
+....................    int16 valor,control; //Variables para la lectura de ADC y la senal de control a modulo CCP 
+....................    FLOAT a,b,c;         //Constantes para parametros de controlador PID 
+....................    Float limite_temperatura;  //Referencia de temperatura 
+....................    Float rt,et,it,dt,yt,ut,it0,et0; //Variables de controlador PID 
+....................    Float max,min;       //Variables para anti-Windup 
+....................     
+....................    min = 0.0; 
+04A6:  CLRF   40
+04A8:  CLRF   3F
+04AA:  CLRF   3E
+04AC:  CLRF   3D
+....................    max = 1000.0; 
+04AE:  CLRF   3C
+04B0:  CLRF   3B
+04B2:  MOVLW  7A
+04B4:  MOVWF  3A
+04B6:  MOVLW  88
+04B8:  MOVWF  39
+....................    it0 = 0.0; 
+04BA:  CLRF   34
+04BC:  CLRF   33
+04BE:  CLRF   32
+04C0:  CLRF   31
+....................    et0 = 0.0; 
+04C2:  CLRF   38
+04C4:  CLRF   37
+04C6:  CLRF   36
+04C8:  CLRF   35
+....................    a = 0.1243; 
+04CA:  CLRF   0C
+04CC:  MOVLW  91
+04CE:  MOVWF  0B
+04D0:  MOVLW  7E
+04D2:  MOVWF  0A
+04D4:  MOVLW  7B
+04D6:  MOVWF  09
+....................    b = 0.0062; 
+04D8:  MOVLW  5F
+04DA:  MOVWF  10
+04DC:  MOVLW  29
+04DE:  MOVWF  0F
+04E0:  MOVLW  4B
+04E2:  MOVWF  0E
+04E4:  MOVLW  77
+04E6:  MOVWF  0D
+....................    c = 0.6215; 
+04E8:  MOVLW  A0
+04EA:  MOVWF  14
+04EC:  MOVLW  1A
+04EE:  MOVWF  13
+04F0:  MOVLW  1F
+04F2:  MOVWF  12
+04F4:  MOVLW  7E
+04F6:  MOVWF  11
+....................    limite_temperatura = 1200.0;   //Set-point r(kt) = 120c 
+04F8:  CLRF   18
+04FA:  CLRF   17
+04FC:  MOVLW  16
+04FE:  MOVWF  16
+0500:  MOVLW  89
+0502:  MOVWF  15
+....................     
+....................    setup_timer_2(t2_div_by_4,249,1);  //Configuracion de Timer 2 para establecer Frec. PWM a 1KHz 
+0504:  MOVLW  00
+0506:  IORLW  05
+0508:  MOVWF  FCA
+050A:  MOVLW  F9
+050C:  MOVWF  FCB
+....................    setup_ccp1(ccp_pwm); //COnfigurar modulo CCP1 en modo PWM 
+050E:  BCF    F94.2
+0510:  BCF    F8B.2
+0512:  BCF    F96.6
+0514:  MOVLW  0C
+0516:  MOVWF  FBD
+0518:  CLRF   FB7
+051A:  CLRF   FB6
+....................    setup_adc(all_analog);  //Configurar ADC 
+051C:  BCF    FC2.0
+....................    set_adc_channel(0);     //Seleccionar Canal 0 para sensor de temperatura 
+051E:  MOVLW  00
+0520:  MOVWF  01
+0522:  MOVF   FC2,W
+0524:  ANDLW  C3
+0526:  IORWF  01,W
+0528:  MOVWF  FC2
+....................    
+....................    while(TRUE) 
+....................    { 
+....................       valor = read_adc(); 
+052A:  BSF    FC2.1
+052C:  BTFSC  FC2.1
+052E:  BRA    052C
+0530:  MOVFF  FC3,05
+0534:  MOVFF  FC4,06
+....................       yt = 5000 * (valor/1024);  //Escalado de la senal de error. 
+0538:  CLRF   03
+053A:  RRCF   06,W
+053C:  MOVWF  02
+053E:  RRCF   02,F
+0540:  MOVLW  3F
+0542:  ANDWF  02,F
+0544:  MOVFF  02,41
+0548:  MOVFF  03,42
+054C:  MOVLW  13
+054E:  MOVWF  44
+0550:  MOVLW  88
+0552:  MOVWF  43
+0554:  MOVFF  03,46
+0558:  MOVFF  02,45
+055C:  BRA    0004
+055E:  MOVFF  02,03
+0562:  MOVFF  01,41
+0566:  MOVFF  02,42
+056A:  BRA    0024
+056C:  MOVFF  03,2C
+0570:  MOVFF  02,2B
+0574:  MOVFF  01,2A
+0578:  MOVFF  00,29
+....................       rt = limite_temperatura; 
+057C:  MOVFF  18,1C
+0580:  MOVFF  17,1B
+0584:  MOVFF  16,1A
+0588:  MOVFF  15,19
+....................       et = rt - yt;  //Calculo de la senal de error. 
+058C:  BSF    FD8.1
+058E:  MOVFF  1C,48
+0592:  MOVFF  1B,47
+0596:  MOVFF  1A,46
+059A:  MOVFF  19,45
+059E:  MOVFF  2C,4C
+05A2:  MOVFF  2B,4B
+05A6:  MOVFF  2A,4A
+05AA:  MOVFF  29,49
+05AE:  RCALL  005C
+05B0:  MOVFF  03,20
+05B4:  MOVFF  02,1F
+05B8:  MOVFF  01,1E
+05BC:  MOVFF  00,1D
+....................       it = (b * et)+it0; 
+05C0:  MOVFF  10,44
+05C4:  MOVFF  0F,43
+05C8:  MOVFF  0E,42
+05CC:  MOVFF  0D,41
+05D0:  MOVFF  20,48
+05D4:  MOVFF  1F,47
+05D8:  MOVFF  1E,46
+05DC:  MOVFF  1D,45
+05E0:  RCALL  02C6
+05E2:  MOVFF  00,41
+05E6:  MOVFF  01,42
+05EA:  MOVFF  02,43
+05EE:  MOVFF  03,44
+05F2:  BCF    FD8.1
+05F4:  MOVFF  03,48
+05F8:  MOVFF  02,47
+05FC:  MOVFF  01,46
+0600:  MOVFF  00,45
+0604:  MOVFF  34,4C
+0608:  MOVFF  33,4B
+060C:  MOVFF  32,4A
+0610:  MOVFF  31,49
+0614:  RCALL  005C
+0616:  MOVFF  03,24
+061A:  MOVFF  02,23
+061E:  MOVFF  01,22
+0622:  MOVFF  00,21
+....................       dt = c * (et - et0); 
+0626:  BSF    FD8.1
+0628:  MOVFF  20,48
+062C:  MOVFF  1F,47
+0630:  MOVFF  1E,46
+0634:  MOVFF  1D,45
+0638:  MOVFF  38,4C
+063C:  MOVFF  37,4B
+0640:  MOVFF  36,4A
+0644:  MOVFF  35,49
+0648:  RCALL  005C
+064A:  MOVFF  14,44
+064E:  MOVFF  13,43
+0652:  MOVFF  12,42
+0656:  MOVFF  11,41
+065A:  MOVFF  03,48
+065E:  MOVFF  02,47
+0662:  MOVFF  01,46
+0666:  MOVFF  00,45
+066A:  RCALL  02C6
+066C:  MOVFF  03,28
+0670:  MOVFF  02,27
+0674:  MOVFF  01,26
+0678:  MOVFF  00,25
+....................       ut = it + (a*et) + dt; 
+067C:  MOVFF  0C,44
+0680:  MOVFF  0B,43
+0684:  MOVFF  0A,42
+0688:  MOVFF  09,41
+068C:  MOVFF  20,48
+0690:  MOVFF  1F,47
+0694:  MOVFF  1E,46
+0698:  MOVFF  1D,45
+069C:  RCALL  02C6
+069E:  BCF    FD8.1
+06A0:  MOVFF  24,48
+06A4:  MOVFF  23,47
+06A8:  MOVFF  22,46
+06AC:  MOVFF  21,45
+06B0:  MOVFF  03,4C
+06B4:  MOVFF  02,4B
+06B8:  MOVFF  01,4A
+06BC:  MOVFF  00,49
+06C0:  RCALL  005C
+06C2:  MOVFF  00,41
+06C6:  MOVFF  01,42
+06CA:  MOVFF  02,43
+06CE:  MOVFF  03,44
+06D2:  BCF    FD8.1
+06D4:  MOVFF  03,48
+06D8:  MOVFF  02,47
+06DC:  MOVFF  01,46
+06E0:  MOVFF  00,45
+06E4:  MOVFF  28,4C
+06E8:  MOVFF  27,4B
+06EC:  MOVFF  26,4A
+06F0:  MOVFF  25,49
+06F4:  RCALL  005C
+06F6:  MOVFF  03,30
+06FA:  MOVFF  02,2F
+06FE:  MOVFF  01,2E
+0702:  MOVFF  00,2D
+....................        
+....................       if(ut > max) 
+0706:  MOVFF  3C,44
+070A:  MOVFF  3B,43
+070E:  MOVFF  3A,42
+0712:  MOVFF  39,41
+0716:  MOVFF  30,48
+071A:  MOVFF  2F,47
+071E:  MOVFF  2E,46
+0722:  MOVFF  2D,45
+0726:  RCALL  03B8
+0728:  BNC   073C
+....................       { 
+....................          ut = max; 
+072A:  MOVFF  3C,30
+072E:  MOVFF  3B,2F
+0732:  MOVFF  3A,2E
+0736:  MOVFF  39,2D
+....................       } 
+....................       else 
+073A:  BRA    0770
+....................       { 
+....................          if(ut < min) 
+073C:  MOVFF  30,44
+0740:  MOVFF  2F,43
+0744:  MOVFF  2E,42
+0748:  MOVFF  2D,41
+074C:  MOVFF  40,48
+0750:  MOVFF  3F,47
+0754:  MOVFF  3E,46
+0758:  MOVFF  3D,45
+075C:  RCALL  03B8
+075E:  BNC   0770
+....................          { 
+....................             ut = min; 
+0760:  MOVFF  40,30
+0764:  MOVFF  3F,2F
+0768:  MOVFF  3E,2E
+076C:  MOVFF  3D,2D
+....................          } 
+....................       } 
+....................        
+....................       control = ut; 
+0770:  MOVFF  30,44
+0774:  MOVFF  2F,43
+0778:  MOVFF  2E,42
+077C:  MOVFF  2D,41
+0780:  BRA    042E
+0782:  MOVFF  02,08
+0786:  MOVFF  01,07
+....................       set_pwm1_duty(control); 
+078A:  MOVFF  08,02
+078E:  MOVFF  07,01
+0792:  RRCF   02,F
+0794:  RRCF   01,F
+0796:  RRCF   02,F
+0798:  RRCF   01,F
+079A:  RRCF   02,F
+079C:  MOVFF  01,FBE
+07A0:  RRCF   02,F
+07A2:  RRCF   02,W
+07A4:  ANDLW  30
+07A6:  MOVWF  00
+07A8:  MOVF   FBD,W
+07AA:  ANDLW  CF
+07AC:  IORWF  00,W
+07AE:  MOVWF  FBD
+....................       it0 = it; 
+07B0:  MOVFF  24,34
+07B4:  MOVFF  23,33
+07B8:  MOVFF  22,32
+07BC:  MOVFF  21,31
+....................       et0 = et; 
+07C0:  MOVFF  20,38
+07C4:  MOVFF  1F,37
+07C8:  MOVFF  1E,36
+07CC:  MOVFF  1D,35
+....................       delay_ms(100); 
+07D0:  MOVLW  64
+07D2:  MOVWF  41
+07D4:  BRA    0468
+....................        
+....................    } 
+07D6:  BRA    052A
+....................     
+.................... } 
+....................  
+....................  
+....................  
+07D8:  SLEEP 
+
+Configuration Fuses:
+   Word  1: C220   XTPLL IESO FCMEN PLL1 CPUDIV1 USBDIV
+   Word  2: 1E3E   BROWNOUT NOWDT BORV20 PUT WDT32768 VREGEN
+   Word  3: 8500   NOPBADEN CCP2C1 MCLR LPT1OSC
+   Word  4: 0081   STVREN NODEBUG NOLVP NOXINST NOICPRT
+   Word  5: C00F   NOPROTECT NOCPD NOCPB
+   Word  6: E00F   NOWRT NOWRTD NOWRTC NOWRTB
+   Word  7: 400F   NOEBTR NOEBTRB
