@@ -1,0 +1,17 @@
+_loop: CODE, 501 0 23
+_SSPInterruptEnable: CODE, 421 0 4
+_spiCLKpolarity: CODE, 484 0 17
+_ADPortConfiguration: CODE, 662 0 166
+_portbMode: CODE, 828 0 264
+_main: CODE, 473 0 11
+_PeripheralIntEnable: CODE, 434 0 9
+_spiBufferfull: CODE, 462 0 11
+__initialization: CODE, 2042 0 2
+_GlobalInterruptEnable: CODE, 425 0 9
+_digitalWrite: CODE, 1356 0 686
+_portdMode: CODE, 1092 0 264
+_spiSlavebegin: CODE, 524 0 26
+_PortBChangeIntEnable: CODE, 443 0 9
+_setup: CODE, 550 0 112
+_spiRead: CODE, 452 0 10
+Total: 1623

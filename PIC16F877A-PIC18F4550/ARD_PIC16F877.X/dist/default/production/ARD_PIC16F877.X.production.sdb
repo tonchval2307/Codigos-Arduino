@@ -1,0 +1,521 @@
+[p LITE_MODE AUTOSTATIC PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877 ]
+[d frameptr 6 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\abdiv.c
+[v ___abdiv __abdiv `(c  1 e 1 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\abmod.c
+[v ___abmod __abmod `(c  1 e 1 0 ]
+"33 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\abtoft.c
+[v ___abtoft __abtoft `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\almod.c
+[v ___almod __almod `(l  1 e 4 0 ]
+"42 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\altoft.c
+[v ___altoft __altoft `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\atdiv.c
+[v ___atdiv __atdiv `(m  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\atmod.c
+[v ___atmod __atmod `(m  1 e 3 0 ]
+"37 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\attoft.c
+[v ___attoft __attoft `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"32 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftge.c
+[v ___ftge __ftge `(b  1 e 0 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftneg.c
+[v ___ftneg __ftneg `(f  1 e 3 0 ]
+"18 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"44 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lbdiv.c
+[v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lbmod.c
+[v ___lbmod __lbmod `(uc  1 e 1 0 ]
+"27 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lbtoft.c
+[v ___lbtoft __lbtoft `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+"35 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lltoft.c
+[v ___lltoft __lltoft `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ltdiv.c
+[v ___ltdiv __ltdiv `(um  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ltmod.c
+[v ___ltmod __ltmod `(um  1 e 3 0 ]
+"30 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lttoft.c
+[v ___lttoft __lttoft `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"28 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwtoft.c
+[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul24.c
+[v ___tmul __tmul `(um  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\pic\eeprom.c
+[v _eecpymem eecpymem `(v  1 e 0 0 ]
+"24
+[v _memcpyee memcpyee `(v  1 e 0 0 ]
+"48
+[v ___eetoc __eetoc `(uc  1 e 1 0 ]
+"56
+[v ___eetoi __eetoi `(ui  1 e 2 0 ]
+"64
+[v ___eetom __eetom `(um  1 e 3 0 ]
+"72
+[v ___eetol __eetol `(ul  1 e 4 0 ]
+"80
+[v ___ctoee __ctoee `(uc  1 e 1 0 ]
+"87
+[v ___itoee __itoee `(ui  1 e 2 0 ]
+"94
+[v ___mtoee __mtoee `(um  1 e 3 0 ]
+"101
+[v ___ltoee __ltoee `(ul  1 e 4 0 ]
+"108
+[v ___eetoft __eetoft `(f  1 e 3 0 ]
+"116
+[v ___eetofl __eetofl `(d  1 e 3 0 ]
+"124
+[v ___fttoee __fttoee `(f  1 e 3 0 ]
+"131
+[v ___fltoee __fltoee `(d  1 e 3 0 ]
+"49 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\pic\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"7 C:\Users\Carlos-Tonche\Google Drive\Proyectos\Battlebot\V2.0\Arduino and PIC18F877\ARD_PIC16F877.X\main.c
+[v _setup setup `(v  1 e 0 0 ]
+"25
+[v _loop loop `(v  1 e 0 0 ]
+"108 C:\Users\Carlos-Tonche\Google Drive\Proyectos\Battlebot\V2.0\Arduino and PIC18F877\ARD_PIC16F877.X\Tonche_16F877.h
+[v _main main `(i  1 e 2 0 ]
+"125
+[v _portaMode portaMode `(v  1 e 0 0 ]
+"207
+[v _portbMode portbMode `(v  1 e 0 0 ]
+"308
+[v _portcMode portcMode `(v  1 e 0 0 ]
+"409
+[v _portdMode portdMode `(v  1 e 0 0 ]
+"510
+[v _porteMode porteMode `(v  1 e 0 0 ]
+"560
+[v _digitalRead digitalRead `(i  1 e 2 0 ]
+"993
+[v _digitalWrite digitalWrite `(v  1 e 0 0 ]
+"1357
+[v _timer0begin timer0begin `(v  1 e 0 0 ]
+"1363
+[v _counter0begin counter0begin `(v  1 e 0 0 ]
+"1378
+[v _timerCounter0Prescaler timerCounter0Prescaler `(v  1 e 0 0 ]
+"1424
+[v _preventiveWDTtoTMR0 preventiveWDTtoTMR0 `(v  1 e 0 0 ]
+"1446
+[v _timer1begin timer1begin `(v  1 e 0 0 ]
+"1450
+[v _counter1begin counter1begin `(v  1 e 0 0 ]
+"1454
+[v _timerCounter1start timerCounter1start `(v  1 e 0 0 ]
+"1458
+[v _timer1read timer1read `(i  1 e 2 0 ]
+"1466
+[v _tmr1Prescaler tmr1Prescaler `(v  1 e 0 0 ]
+"1492
+[v _spiRead spiRead `(i  1 e 2 0 ]
+"1496
+[v _spiSlavebegin spiSlavebegin `(v  1 e 0 0 ]
+"1511
+[v _ADPortConfiguration ADPortConfiguration `(v  1 e 0 0 ]
+"1613
+[v _spiCLKpolarity spiCLKpolarity `(v  1 e 0 0 ]
+"1624
+[v _spiBufferfull spiBufferfull `(i  1 e 2 0 ]
+"1628
+[v _spiOverflow spiOverflow `(i  1 e 2 0 ]
+"1632
+[v _spiMasterbegin spiMasterbegin `(v  1 e 0 0 ]
+"1639
+[v _GlobalInterruptEnable GlobalInterruptEnable `(v  1 e 0 0 ]
+"1650
+[v _PeripheralIntEnable PeripheralIntEnable `(v  1 e 0 0 ]
+"1661
+[v _timer0IntEnable timer0IntEnable `(v  1 e 0 0 ]
+"1672
+[v _ExternalIntEnable ExternalIntEnable `(v  1 e 0 0 ]
+"1683
+[v _PortBChangeIntEnable PortBChangeIntEnable `(v  1 e 0 0 ]
+"1694
+[v _TMR0Overflow TMR0Overflow `(i  1 e 2 0 ]
+"1705
+[v _TMR0IntReset TMR0IntReset `(v  1 e 0 0 ]
+"1709
+[v _ExternalInt ExternalInt `(i  1 e 2 0 ]
+"1720
+[v _ExternalIntReset ExternalIntReset `(v  1 e 0 0 ]
+"1724
+[v _PortBChangeInt PortBChangeInt `(i  1 e 2 0 ]
+"1735
+[v _PeriheralEnable PeriheralEnable `(v  1 e 0 0 ]
+"1853
+[v _ADInterrupt ADInterrupt `(i  1 e 2 0 ]
+"1864
+[v _ADInterruptReset ADInterruptReset `(v  1 e 0 0 ]
+"1868
+[v _usartRXint usartRXint `(i  1 e 2 0 ]
+"1872
+[v _usartTXint usartTXint `(i  1 e 2 0 ]
+"1876
+[v _SSPIFinterrupt SSPIFinterrupt `(i  1 e 2 0 ]
+"1880
+[v _TxRxOcurredReset TxRxOcurredReset `(v  1 e 0 0 ]
+"1884
+[v _CCP1IFInterrupt CCP1IFInterrupt `(i  1 e 2 0 ]
+"1888
+[v _CCP1IFReset CCP1IFReset `(v  1 e 0 0 ]
+"1892
+[v _TMR2IFInterrupt TMR2IFInterrupt `(i  1 e 2 0 ]
+"1896
+[v _TMR2FReset TMR2FReset `(v  1 e 0 0 ]
+"1900
+[v _TMR1Interrupt TMR1Interrupt `(i  1 e 2 0 ]
+"1904
+[v _TMR1IFReset TMR1IFReset `(v  1 e 0 0 ]
+"1908
+[v _EEPROMwriteIntEn EEPROMwriteIntEn `(v  1 e 0 0 ]
+"1919
+[v _BusCollisionEnable BusCollisionEnable `(v  1 e 0 0 ]
+"1930
+[v _CCP2InterruptEnable CCP2InterruptEnable `(v  1 e 0 0 ]
+"1941
+[v _EEPROMWriteFlag EEPROMWriteFlag `(i  1 e 2 0 ]
+"1945
+[v _BusCollisionFlag BusCollisionFlag `(i  1 e 2 0 ]
+"1949
+[v _CCP2Flag CCP2Flag `(i  1 e 2 0 ]
+"1953
+[v _EEPROMFlagReset EEPROMFlagReset `(v  1 e 0 0 ]
+"1957
+[v _BusColisionReset BusColisionReset `(v  1 e 0 0 ]
+"1961
+[v _CCP2FlagReset CCP2FlagReset `(v  1 e 0 0 ]
+"1965
+[v _SSPInterruptEnable SSPInterruptEnable `(v  1 e 0 0 ]
+"1969
+[v _SSPInterruptDisable SSPInterruptDisable `(v  1 e 0 0 ]
+[s S27 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+]
+"173 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16f877.h
+[u S34 . 1 `S27 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES34  1 e 1 @5 ]
+"207
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+[s S44 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"224
+[u S53 . 1 `S44 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES53  1 e 1 @6 ]
+"285
+[v _PORTCbits PORTCbits `VES53  1 e 1 @7 ]
+"346
+[v _PORTDbits PORTDbits `VES53  1 e 1 @8 ]
+[s S187 . 1 `uc 1 RE0 1 0 :1:0 
+`uc 1 RE1 1 0 :1:1 
+`uc 1 RE2 1 0 :1:2 
+]
+"402
+[u S191 . 1 `S187 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES191  1 e 1 @9 ]
+[s S411 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"463
+[s S420 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+[u S425 . 1 `S411 1 . 1 0 `S420 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES425  1 e 1 @11 ]
+"534
+[v _PIR1bits PIR1bits `VES53  1 e 1 @12 ]
+[s S485 . 1 `uc 1 CCP2IE 1 0 :1:0 
+`uc 1 . 1 0 :2:1 
+`uc 1 BCLIE 1 0 :1:3 
+`uc 1 EEIE 1 0 :1:4 
+]
+"591
+[u S490 . 1 `S485 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES490  1 e 1 @13 ]
+"616
+[v _TMR1L TMR1L `VEuc  1 e 1 @14 ]
+"622
+[v _TMR1H TMR1H `VEuc  1 e 1 @15 ]
+[s S228 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 TMR1CS 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 T1OSCEN 1 0 :1:3 
+`uc 1 T1CKPS 1 0 :2:4 
+]
+"655
+[s S234 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+]
+[s S238 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T1INSYNC 1 0 :1:2 
+]
+[s S241 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T1SYNC 1 0 :1:2 
+]
+[u S244 . 1 `S228 1 . 1 0 `S234 1 . 1 0 `S238 1 . 1 0 `S241 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES244  1 e 1 @16 ]
+"780
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
+[s S363 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"806
+[s S369 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[u S374 . 1 `S363 1 . 1 0 `S369 1 . 1 0 ]
+[v _SSPCONbits SSPCONbits `VES374  1 e 1 @20 ]
+[s S202 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nRBPU 1 0 :1:7 
+]
+"1232
+[s S209 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+]
+[u S213 . 1 `S202 1 . 1 0 `S209 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES213  1 e 1 @129 ]
+"1296
+[v _TRISAbits TRISAbits `VES34  1 e 1 @133 ]
+"1347
+[v _TRISBbits TRISBbits `VES53  1 e 1 @134 ]
+"1408
+[v _TRISCbits TRISCbits `VES53  1 e 1 @135 ]
+"1469
+[v _TRISDbits TRISDbits `VES53  1 e 1 @136 ]
+"1530
+[v _TRISEbits TRISEbits `VES53  1 e 1 @137 ]
+"1586
+[v _PIE1bits PIE1bits `VES53  1 e 1 @140 ]
+"1643
+[v _PIE2bits PIE2bits `VES490  1 e 1 @141 ]
+[s S274 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+"1822
+[s S283 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D 1 0 :1:5 
+]
+[s S288 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 I2C_READ 1 0 :1:2 
+`uc 1 I2C_START 1 0 :1:3 
+`uc 1 I2C_STOP 1 0 :1:4 
+`uc 1 I2C_DATA 1 0 :1:5 
+]
+[s S294 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S299 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S304 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S309 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 DATA_ADDRESS 1 0 :1:5 
+]
+[u S314 . 1 `S274 1 . 1 0 `S283 1 . 1 0 `S288 1 . 1 0 `S294 1 . 1 0 `S299 1 . 1 0 `S304 1 . 1 0 `S309 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES314  1 e 1 @148 ]
+[s S389 . 1 `uc 1 PCFG 1 0 :4:0 
+`uc 1 . 1 0 :3:4 
+`uc 1 ADFM 1 0 :1:7 
+]
+"2046
+[s S393 . 1 `uc 1 PCFG0 1 0 :1:0 
+`uc 1 PCFG1 1 0 :1:1 
+`uc 1 PCFG2 1 0 :1:2 
+`uc 1 PCFG3 1 0 :1:3 
+]
+[u S398 . 1 `S389 1 . 1 0 `S393 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES398  1 e 1 @159 ]
+"2080
+[v _EEDATA EEDATA `VEuc  1 e 1 @268 ]
+"2086
+[v _EEADR EEADR `VEuc  1 e 1 @269 ]
+"2104
+[v _EECON1 EECON1 `VEuc  1 e 1 @396 ]
+"2148
+[v _EECON2 EECON2 `VEuc  1 e 1 @397 ]
+"2188
+[v _CARRY CARRY `VEb  1 e 0 @24 ]
+"2254
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"2372
+[v _RD RD `VEb  1 e 0 @3168 ]
+"2572
+[v _WR WR `VEb  1 e 0 @3169 ]
+"2574
+[v _WREN WREN `VEb  1 e 0 @3170 ]
+"6 C:\Users\Carlos-Tonche\Google Drive\Proyectos\Battlebot\V2.0\Arduino and PIC18F877\ARD_PIC16F877.X\main.c
+[v _data data `VEi  1 e 2 0 ]
+"108 C:\Users\Carlos-Tonche\Google Drive\Proyectos\Battlebot\V2.0\Arduino and PIC18F877\ARD_PIC16F877.X\Tonche_16F877.h
+[v _main main `(i  1 e 2 0 ]
+{
+"115
+} 0
+"7 C:\Users\Carlos-Tonche\Google Drive\Proyectos\Battlebot\V2.0\Arduino and PIC18F877\ARD_PIC16F877.X\main.c
+[v _setup setup `(v  1 e 0 0 ]
+{
+"19
+[v setup@i i `i  1 a 2 6 ]
+"24
+} 0
+"1496 C:\Users\Carlos-Tonche\Google Drive\Proyectos\Battlebot\V2.0\Arduino and PIC18F877\ARD_PIC16F877.X\Tonche_16F877.h
+[v _spiSlavebegin spiSlavebegin `(v  1 e 0 0 ]
+{
+"1510
+} 0
+"1511
+[v _ADPortConfiguration ADPortConfiguration `(v  1 e 0 0 ]
+{
+[v ADPortConfiguration@config config `DCCi  1 p 2 0 ]
+"1612
+} 0
+"1613
+[v _spiCLKpolarity spiCLKpolarity `(v  1 e 0 0 ]
+{
+[v spiCLKpolarity@polarity polarity `uc  1 a 1 wreg ]
+[v spiCLKpolarity@polarity polarity `uc  1 a 1 wreg ]
+"1615
+[v spiCLKpolarity@polarity polarity `uc  1 a 1 0 ]
+"1623
+} 0
+"409
+[v _portdMode portdMode `(v  1 e 0 0 ]
+{
+[v portdMode@pin pin `i  1 p 2 0 ]
+[v portdMode@mode mode `uc  1 p 1 2 ]
+"509
+} 0
+"207
+[v _portbMode portbMode `(v  1 e 0 0 ]
+{
+[v portbMode@pin pin `i  1 p 2 0 ]
+[v portbMode@mode mode `uc  1 p 1 2 ]
+"307
+} 0
+"993
+[v _digitalWrite digitalWrite `(v  1 e 0 0 ]
+{
+[v digitalWrite@pin pin `i  1 p 2 0 ]
+[v digitalWrite@port port `uc  1 p 1 2 ]
+[v digitalWrite@value value `uc  1 p 1 3 ]
+"1353
+} 0
+"1965
+[v _SSPInterruptEnable SSPInterruptEnable `(v  1 e 0 0 ]
+{
+"1968
+} 0
+"1683
+[v _PortBChangeIntEnable PortBChangeIntEnable `(v  1 e 0 0 ]
+{
+[v PortBChangeIntEnable@mode mode `i  1 p 2 0 ]
+"1693
+} 0
+"1650
+[v _PeripheralIntEnable PeripheralIntEnable `(v  1 e 0 0 ]
+{
+[v PeripheralIntEnable@mode mode `i  1 p 2 0 ]
+"1660
+} 0
+"1639
+[v _GlobalInterruptEnable GlobalInterruptEnable `(v  1 e 0 0 ]
+{
+[v GlobalInterruptEnable@mode mode `i  1 p 2 0 ]
+"1649
+} 0
+"25 C:\Users\Carlos-Tonche\Google Drive\Proyectos\Battlebot\V2.0\Arduino and PIC18F877\ARD_PIC16F877.X\main.c
+[v _loop loop `(v  1 e 0 0 ]
+{
+"37
+} 0
+"1492 C:\Users\Carlos-Tonche\Google Drive\Proyectos\Battlebot\V2.0\Arduino and PIC18F877\ARD_PIC16F877.X\Tonche_16F877.h
+[v _spiRead spiRead `(i  1 e 2 0 ]
+{
+"1495
+} 0
+"1624
+[v _spiBufferfull spiBufferfull `(i  1 e 2 0 ]
+{
+"1627
+} 0
