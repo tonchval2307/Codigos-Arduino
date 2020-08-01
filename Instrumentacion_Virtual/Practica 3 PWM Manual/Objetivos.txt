@@ -1,0 +1,5 @@
+1. Reafirmar el conococimiento de los conceptos de PWM y ancho de pulso de encendido.
+2. Conocer el Funcionamiento de un Waveform Chart.
+3. Conocer el Funcionamiento de las Acciones Mecanicas en los controles.
+4. Reafirmar el conocimiento de como manipular recursos.
+5. Usar razonamiento matematico para resolver problemas.

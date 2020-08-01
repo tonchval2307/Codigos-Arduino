@@ -1,0 +1,5 @@
+1. Conocer el entornos Basico de LabVIEW 
+2. Usar las herramientas numericas basicas.
+3. concocer os conceptos de tipo de dato.
+4. Conocer el concepto de "cable".
+5. Usar controles e indicadores.
