@@ -1,0 +1,614 @@
+MPASM 5.77   TINYB18F2455-2550-4455-4550.ASM   11-5-2018  19:32:27         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001         radix DEC
+                      00002 
+                      00003         ; change these lines accordingly to your application    
+                      00004 ;       For 2455, 2550, 4455, and 4550: 4 MHz quartz / 1 * 24 / 4 = 24 MHz
+Error[105]  : Cannot open file (Include File "pic18f4550.inc" not found)
+                      00005 #include <pic18f4550.inc>
+                      00006         
+  00000055            00007 IdTypePIC = 0x55                        ; must exists in "piccodes.ini"
+                      00008 #define max_flash 0x8000        ; in BYTES!!! (= 'max flash memory' from "piccodes.ini")
+  016E3600            00009 xtal EQU 24000000               ; you may want to change: _XT_OSC_1H  _HS_OSC_1H  _HSPLL_OSC_1H
+  0001C200            00010 baud EQU 115200                 ; standard TinyBld baud rates: 115200 or 19200
+                      00011         ; The above 5 lines can be changed and built a bootloader for the desired frequency (and PIC typ
+                            e)
+                      00012         
+                      00013         ;********************************************************************
+                      00014         ;       Tiny Bootloader         18F series              Size=100words
+                      00015         ;       claudiu.chiculita@ugal.ro
+                      00016         ;       http://www.etc.ugal.ro/cchiculita/software/picbootloader.htm
+                      00017         ;       Modified by Nam Nguyen-Quang for testing different PIC18Fs with tinybldWin.exe v1.9
+                      00018         ;       namqn@yahoo.com
+                      00019         ; 
+                      00020         ; modified by Edorul:
+                      00021         ; EEPROM write is only compatible with "Tiny PIC Bootloader+"
+                      00022         ; http://sourceforge.net/projects/tinypicbootload/
+                      00023         ;********************************************************************
+                      00024 
+                      00025 ;       This source file is for PIC18F2455, 2550, 4455, and 4550
+                      00026 
+                      00027 ;       Copy these include files to your project directory (i.e. they are in the same
+                      00028 ;       directory with your .asm source file), if necessary
+                      00029 
+                      00030         #include "spbrgselect.inc"      ; RoundResult and baud_rate
+  00000000            00001 RoundResult SET 0                               ; Rounding function.  RoundResult = Round(aa/bb)
+                      00002 Round   macro aa,bb
+                      00003         LOCAL rr = aa/bb
+                      00004         LOCAL d1 = aa - rr*bb
+                      00005         LOCAL d2 = (rr+1)*bb - aa
+                      00006 RoundResult = rr
+                      00007         if d1 >= d2
+                      00008 RoundResult++
+                      00009         endif
+                      00010         endm
+                      00011 
+  00000000            00012 AbsResult SET 0
+                      00013 Abs             macro nr
+                      00014         if nr>=0
+                      00015 AbsResult = nr
+                      00016         else
+                      00017 AbsResult = -nr
+                      00018         endif
+                      00019         endm
+                      00020                 
+                      00021         Round xtal,(16*baud)
+MPASM 5.77   TINYB18F2455-2550-4455-4550.ASM   11-5-2018  19:32:27         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+  000D                    M         LOCAL rr = xtal/(16*baud)
+  9600                    M         LOCAL d1 = xtal - rr*(16*baud)
+  8A00                    M         LOCAL d2 = (rr+1)*(16*baud) - xtal
+  0000000D                M RoundResult = rr
+                          M         if d1 >= d2
+                          M RoundResult++
+                          M         endif
+  0000000C            00022 spbrg_value EQU RoundResult-1
+                      00023 
+                      00024         Round xtal,(16*(spbrg_value+1))
+  C2B8                    M         LOCAL rr = xtal/(16*(spbrg_value+1))
+  0080                    M         LOCAL d1 = xtal - rr*(16*(spbrg_value+1))
+  0050                    M         LOCAL d2 = (rr+1)*(16*(spbrg_value+1)) - xtal
+  0001C2B8                M RoundResult = rr
+                          M         if d1 >= d2
+  0001C2B9                M RoundResult++
+                          M         endif
+  0001C2B9            00025 baud_real EQU RoundResult
+                      00026         Abs(baud_real-baud)
+                          M         if (baud_real-baud)>=0
+  000000B9                M AbsResult = (baud_real-baud)
+                          M         else
+                          M AbsResult = -(baud_real-baud)
+                          M         endif
+  00000000            00027 errpercent EQU AbsResult*100/baud
+                      00028         if errpercent > 4
+                      00029                 ERROR big error in baudrate: 0%
+                      00030         endif
+                      00031         if errpercent >= 2
+                      00032                 messg baudrate not exact: 0%
+                      00033         endif
+                      00031 
+                      00032                 #define first_address max_flash-200             ;100 words
+                      00033 
+                      00034 ;       For different PICs, uncomment the appropriate lines of CONFIG directives
+                      00035 ;       as indicated, and comment out all the other lines, if necessary
+                      00036 ;       For example, the following configuration is for PIC18F4550, with 4 MHz crystal
+                      00037 ;       You could find the symbol names for the chip in its include file
+                      00038 ;       (in the Microchip\MPASM Suite directory)
+                      00039 
+                      00040 
+                      00041 ;----- CONFIG1L Options -----
+Error[176]  : CONFIG Directive Error:  (processor "EEPROM8" is invalid for CONFIG directive)
+                      00042                 CONFIG  PLLDIV = 1, CPUDIV = OSC3_PLL4, USBDIV = 2
+                      00043 
+                      00044 
+                      00045 ;----- CONFIG1H Options -----
+Error[176]  : CONFIG Directive Error:  (processor "EEPROM8" is invalid for CONFIG directive)
+                      00046                 CONFIG  FOSC = HSPLL_HS, FCMEN = OFF, IESO = OFF
+                      00047 
+                      00048 ;----- CONFIG2L Options -----
+Error[176]  : CONFIG Directive Error:  (processor "EEPROM8" is invalid for CONFIG directive)
+                      00049                 CONFIG  PWRT = ON, BOR = OFF, BORV = 2, VREGEN = OFF
+MPASM 5.77   TINYB18F2455-2550-4455-4550.ASM   11-5-2018  19:32:27         PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00050 
+                      00051 ;----- CONFIG2H Options -----
+Error[176]  : CONFIG Directive Error:  (processor "EEPROM8" is invalid for CONFIG directive)
+                      00052                 CONFIG  WDT = OFF, WDTPS = 128
+                      00053 
+                      00054 
+                      00055 ;----- CONFIG3H Options -----
+Error[176]  : CONFIG Directive Error:  (processor "EEPROM8" is invalid for CONFIG directive)
+                      00056                 CONFIG  MCLRE = ON, LPT1OSC = OFF, PBADEN = OFF, CCP2MX = OFF
+                      00057 
+                      00058 
+                      00059 ;----- CONFIG4L Options -----
+Error[176]  : CONFIG Directive Error:  (processor "EEPROM8" is invalid for CONFIG directive)
+                      00060                 CONFIG  STVREN = ON, LVP = OFF, ICPRT = OFF, DEBUG = OFF, XINST = OFF
+                      00061 
+                      00062 
+                      00063 ;----------------------------- PROGRAM ---------------------------------
+                      00064         cblock 0
+  00000000            00065         crc
+  00000001            00066         i
+  00000002            00067         cnt1
+  00000003            00068         cnt2
+  00000004            00069         cnt3
+  00000005            00070         counter_hi
+  00000006            00071         counter_lo
+  00000007            00072         flag
+                      00073         endc
+                      00074         cblock 10
+  0000000A            00075         buffer:64
+  0000004A            00076         dummy4crc
+                      00077         endc
+                      00078         
+                      00079 SendL macro car
+                      00080         movlw car
+                      00081         movwf TXREG
+                      00082         endm
+                      00083         
+                      00084 ;0000000000000000000000000 RESET 00000000000000000000000000
+                      00085 
+0000                  00086                 ORG     0x0000
+Warning[207]: Found label after column 1. (GOTO)
+Error[122]  : Illegal opcode (IntrareBootloader)
+0000                  00087                 GOTO    IntrareBootloader
+                      00088 
+                      00089 ;view with TabSize=4
+                      00090 ;&&&&&&&&&&&&&&&&&&&&&&&   START     &&&&&&&&&&&&&&&&&&&&&&
+                      00091 ;----------------------  Bootloader  ----------------------
+                      00092 ;PC_flash:              C1h                             U               H               L               
+                            x  ...  <64 bytes>   ...  crc   
+                      00093 ;PC_eeprom:             C1h                             40h   EEADRH  EEADR     1       EEDATA  crc     
+                                                            
+                      00094 ;PC_cfg                 C1h                     U OR 80h        H               L               1       
+                                    byte    crc
+MPASM 5.77   TINYB18F2455-2550-4455-4550.ASM   11-5-2018  19:32:27         PAGE  4
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00095 ;PIC_response:     type `K`
+                      00096         
+7F38                  00097         ORG first_address               ;space to deposit first 4 instr. of user prog.
+Warning[207]: Found label after column 1. (nop)
+7F38                  00098         nop
+Warning[207]: Found label after column 1. (nop)
+7F38                  00099         nop
+Warning[207]: Found label after column 1. (nop)
+7F38                  00100         nop
+Warning[207]: Found label after column 1. (nop)
+7F38                  00101         nop
+7F40                  00102         org first_address+8
+7F40                  00103 IntrareBootloader
+                      00104                                                         ;init serial port
+Warning[207]: Found label after column 1. (movlw)
+Error[122]  : Illegal opcode (b)
+                      00105         movlw b'00100100'
+Warning[207]: Found label after column 1. (movwf)
+Error[122]  : Illegal opcode (TXSTA)
+                      00106         movwf TXSTA
+Warning[207]: Found label after column 1. (movlw)
+Error[122]  : Illegal opcode (spbrg_value)
+                      00107         movlw spbrg_value
+Warning[207]: Found label after column 1. (movwf)
+Error[122]  : Illegal opcode (SPBRG)
+                      00108         movwf SPBRG
+Warning[207]: Found label after column 1. (movlw)
+Error[122]  : Illegal opcode (b)
+                      00109         movlw b'10010000'
+Warning[207]: Found label after column 1. (movwf)
+Error[122]  : Illegal opcode (RCSTA)
+                      00110         movwf RCSTA
+                      00111                                                         ;wait for computer
+Warning[207]: Found label after column 1. (rcall)
+Error[122]  : Illegal opcode (Receive)
+                      00112         rcall Receive                   
+Warning[207]: Found label after column 1. (sublw)
+Error[108]  : Illegal character (0)
+                      00113         sublw 0xC1                              ;Expect C1h
+Warning[207]: Found label after column 1. (bnz)
+Error[122]  : Illegal opcode (way_to_exit)
+                      00114         bnz way_to_exit
+                      00115         SendL IdTypePIC                 ;send PIC type
+Warning[207]: Found label after column 1. (movlw)
+Error[122]  : Illegal opcode (IdTypePIC)
+                      00080         movlw IdTypePIC
+Warning[207]: Found label after column 1. (movwf)
+Error[122]  : Illegal opcode (TXREG)
+                      00081         movwf TXREG
+7F40                  00116 MainLoop
+                      00117         SendL 'K'                               ; "-Everything OK, ready and waiting."
+Warning[207]: Found label after column 1. (movlw)
+Error[108]  : Illegal character (')
+MPASM 5.77   TINYB18F2455-2550-4455-4550.ASM   11-5-2018  19:32:27         PAGE  5
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00080         movlw 'K'
+Warning[207]: Found label after column 1. (movwf)
+Error[122]  : Illegal opcode (TXREG)
+                      00081         movwf TXREG
+7F40                  00118 mainl
+Warning[207]: Found label after column 1. (clrf)
+Error[122]  : Illegal opcode (crc)
+7F40                  00119         clrf crc
+Warning[207]: Found label after column 1. (rcall)
+Error[122]  : Illegal opcode (Receive)
+7F40                  00120         rcall Receive                   ;Upper
+Warning[207]: Found label after column 1. (movwf)
+Error[122]  : Illegal opcode (TBLPTRU)
+7F40                  00121         movwf TBLPTRU
+Warning[207]: Found label after column 1. (movwf)
+Error[122]  : Illegal opcode (flag)
+7F40                  00122                 movwf flag                      ;(for EEPROM and CFG cases)
+Warning[207]: Found label after column 1. (rcall)
+Error[122]  : Illegal opcode (Receive)
+7F40                  00123         rcall Receive                   ;Hi
+Warning[207]: Found label after column 1. (movwf)
+Error[122]  : Illegal opcode (TBLPTRH)
+7F40                  00124         movwf TBLPTRH
+Warning[207]: Found label after column 1. (rcall)
+Error[122]  : Illegal opcode (Receive)
+7F40                  00125         rcall Receive                   ;Lo
+Warning[207]: Found label after column 1. (movwf)
+Error[122]  : Illegal opcode (TBLPTRL)
+7F40                  00126         movwf TBLPTRL
+Warning[207]: Found label after column 1. (movwf)
+Error[122]  : Illegal opcode (EEADR)
+7F40                  00127                 movwf EEADR                     ;(for EEPROM case)
+                      00128 
+Warning[207]: Found label after column 1. (rcall)
+Error[122]  : Illegal opcode (Receive)
+                      00129         rcall Receive                   ;count
+Warning[207]: Found label after column 1. (movwf)
+Error[122]  : Illegal opcode (i)
+                      00130         movwf i
+Warning[207]: Found label after column 1. (incf)
+Error[122]  : Illegal opcode (i)
+                      00131         incf i
+Warning[207]: Found label after column 1. (lfsr)
+Error[122]  : Illegal opcode (FSR0)
+                      00132         lfsr FSR0, (buffer-1)
+7F40                  00133 rcvoct                                          ;read 64+1 bytes
+Warning[207]: Found label after column 1. (movwf)
+Error[122]  : Illegal opcode (TABLAT)
+7F40                  00134                 movwf TABLAT            ;prepare for cfg; => store byte before crc
+Warning[207]: Found label after column 1. (rcall)
+Error[122]  : Illegal opcode (Receive)
+7F40                  00135         rcall Receive
+Warning[207]: Found label after column 1. (movwf)
+MPASM 5.77   TINYB18F2455-2550-4455-4550.ASM   11-5-2018  19:32:27         PAGE  6
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Error[122]  : Illegal opcode (PREINC0)
+7F40                  00136         movwf PREINC0
+Warning[207]: Found label after column 1. (btfss)
+Error[122]  : Illegal opcode (i)
+7F40                  00137         btfss i,0               ;don't know for the moment but in case of EEPROM data presence...
+Warning[207]: Found label after column 1. (movwf)
+Error[122]  : Illegal opcode (EEDATA)
+7F40                  00138                 movwf EEDATA            ;...then store the data byte (and not the CRC!)
+Warning[207]: Found label after column 1. (decfsz)
+Error[122]  : Illegal opcode (i)
+7F40                  00139         decfsz i
+Warning[207]: Found label after column 1. (bra)
+Error[122]  : Illegal opcode (rcvoct)
+7F40                  00140         bra rcvoct
+                      00141         
+Warning[207]: Found label after column 1. (tstfsz)
+Error[122]  : Illegal opcode (crc)
+                      00142         tstfsz crc                              ;check crc
+Warning[207]: Found label after column 1. (bra)
+Error[122]  : Illegal opcode (ziieroare)
+                      00143         bra ziieroare
+Warning[207]: Found label after column 1. (btfss)
+Error[122]  : Illegal opcode (flag)
+                      00144                 btfss flag,6            ;is EEPROM data?
+Warning[207]: Found label after column 1. (bra)
+Error[122]  : Illegal opcode (noeeprom)
+                      00145                 bra noeeprom
+Warning[207]: Found label after column 1. (movlw)
+Error[122]  : Illegal opcode (b)
+                      00146                 movlw b'00000100'       ;Setup eeprom
+Warning[207]: Found label after column 1. (rcall)
+Error[122]  : Illegal opcode (Write)
+                      00147                 rcall Write
+Warning[207]: Found label after column 1. (bra)
+Error[122]  : Illegal opcode (waitwre)
+                      00148                 bra waitwre
+7F40                  00149 noeeprom
+                      00150 ;----no CFG write in "Tiny PIC Bootloader+"
+                      00151 ;               btfss flag,7            ;is CFG data?
+                      00152 ;               bra noconfig
+                      00153 ;               tblwt*                          ;write TABLAT(byte before crc) to TBLPTR***
+                      00154 ;               movlw b'11000100'       ;Setup cfg
+                      00155 ;               rcall Write
+                      00156 ;               bra waitwre
+                      00157 ;noconfig
+                      00158 ;----
+                      00159                                                         ;write
+7F40                  00160 eraseloop
+Warning[207]: Found label after column 1. (movlw)
+Error[122]  : Illegal opcode (b)
+7F40                  00161         movlw   b'10010100'             ; Setup erase
+Warning[207]: Found label after column 1. (rcall)
+Error[122]  : Illegal opcode (Write)
+MPASM 5.77   TINYB18F2455-2550-4455-4550.ASM   11-5-2018  19:32:27         PAGE  7
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+7F40                  00162         rcall Write
+Warning[207]: Found label after column 1. (TBLRD)
+Error[108]  : Illegal character (*)
+7F40                  00163         TBLRD*-                                 ; point to adr-1
+                      00164         
+7F40                  00165 writebigloop    
+Warning[207]: Found label after column 1. (movlw)
+Error[108]  : Illegal character (2)
+7F40                  00166         movlw 2                                 ; 2groups
+Warning[207]: Found label after column 1. (movwf)
+Error[122]  : Illegal opcode (counter_hi)
+7F40                  00167         movwf counter_hi
+Warning[207]: Found label after column 1. (lfsr)
+Error[122]  : Illegal opcode (FSR0)
+7F40                  00168         lfsr FSR0,buffer
+7F40                  00169 writesloop
+Warning[207]: Found label after column 1. (movlw)
+Error[108]  : Illegal character (3)
+7F40                  00170         movlw 32                                ; 32bytes = 16instr
+Warning[207]: Found label after column 1. (movwf)
+Error[122]  : Illegal opcode (counter_lo)
+7F40                  00171         movwf counter_lo
+7F40                  00172 writebyte
+Warning[207]: Found label after column 1. (movf)
+Error[122]  : Illegal opcode (POSTINC0)
+7F40                  00173         movf POSTINC0,w                 ; put 1 byte
+Warning[207]: Found label after column 1. (movwf)
+Error[122]  : Illegal opcode (TABLAT)
+7F40                  00174         movwf TABLAT
+Warning[207]: Found label after column 1. (tblwt)
+Error[108]  : Illegal character (+)
+7F40                  00175         tblwt+*
+Warning[207]: Found label after column 1. (decfsz)
+Error[122]  : Illegal opcode (counter_lo)
+7F40                  00176         decfsz counter_lo
+Warning[207]: Found label after column 1. (bra)
+Error[122]  : Illegal opcode (writebyte)
+7F40                  00177         bra writebyte
+                      00178         
+Warning[207]: Found label after column 1. (movlw)
+Error[122]  : Illegal opcode (b)
+                      00179         movlw   b'10000100'             ; Setup writes
+Warning[207]: Found label after column 1. (rcall)
+Error[122]  : Illegal opcode (Write)
+                      00180         rcall Write
+Warning[207]: Found label after column 1. (decfsz)
+Error[122]  : Illegal opcode (counter_hi)
+                      00181         decfsz counter_hi
+Warning[207]: Found label after column 1. (bra)
+Error[122]  : Illegal opcode (writesloop)
+                      00182         bra writesloop
+7F40                  00183 waitwre 
+                      00184         ;btfsc EECON1,WR                ;for eeprom writes (wait to finish write)
+MPASM 5.77   TINYB18F2455-2550-4455-4550.ASM   11-5-2018  19:32:27         PAGE  8
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00185         ;bra waitwre                    ;no need: round trip time with PC bigger than 4ms
+                      00186         
+Warning[207]: Found label after column 1. (bcf)
+Error[122]  : Illegal opcode (EECON1)
+                      00187         bcf EECON1,WREN                 ;disable writes
+Warning[207]: Found label after column 1. (bra)
+Error[122]  : Illegal opcode (MainLoop)
+                      00188         bra MainLoop
+                      00189         
+7F40                  00190 ziieroare                                       ;CRC failed
+                      00191         SendL 'N'
+Warning[207]: Found label after column 1. (movlw)
+Error[108]  : Illegal character (')
+                      00080         movlw 'N'
+Warning[207]: Found label after column 1. (movwf)
+Error[122]  : Illegal opcode (TXREG)
+                      00081         movwf TXREG
+Warning[207]: Found label after column 1. (bra)
+Error[122]  : Illegal opcode (mainl)
+                      00192         bra mainl
+                      00193           
+                      00194 ;******** procedures ******************
+                      00195 
+7F40                  00196 Write
+Warning[207]: Found label after column 1. (movwf)
+Error[122]  : Illegal opcode (EECON1)
+7F40                  00197         movwf EECON1
+Warning[207]: Found label after column 1. (movlw)
+Error[108]  : Illegal character (0)
+7F40                  00198         movlw 0x55
+Warning[207]: Found label after column 1. (movwf)
+Error[122]  : Illegal opcode (EECON2)
+7F40                  00199         movwf EECON2
+Warning[207]: Found label after column 1. (movlw)
+Error[108]  : Illegal character (0)
+7F40                  00200         movlw 0xAA
+Warning[207]: Found label after column 1. (movwf)
+Error[122]  : Illegal opcode (EECON2)
+7F40                  00201         movwf EECON2
+Warning[207]: Found label after column 1. (bsf)
+Error[122]  : Illegal opcode (EECON1)
+7F40                  00202         bsf EECON1,WR                   ;WRITE
+Warning[207]: Found label after column 1. (nop)
+Error[116]  : Address label duplicated or different in second pass (nop)
+7F40                  00203         nop
+                      00204         ;nop
+Warning[207]: Found label after column 1. (return)
+7F40                  00205         return
+                      00206 
+                      00207 
+7F40                  00208 Receive
+Warning[207]: Found label after column 1. (movlw)
+Error[122]  : Illegal opcode (xtal)
+MPASM 5.77   TINYB18F2455-2550-4455-4550.ASM   11-5-2018  19:32:27         PAGE  9
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+7F40                  00209         movlw xtal/2000000+1    ; for 20MHz => 11 => 1second delay
+                      00210                                                         ; for 18F2xxx chips, this should be xtal/1000000
+                            +1
+Warning[207]: Found label after column 1. (movwf)
+Error[122]  : Illegal opcode (cnt1)
+                      00211         movwf cnt1
+7F40                  00212 rpt2                                            
+Warning[207]: Found label after column 1. (clrf)
+Error[122]  : Illegal opcode (cnt2)
+7F40                  00213         clrf cnt2
+7F40                  00214 rpt3
+Warning[207]: Found label after column 1. (clrf)
+Error[122]  : Illegal opcode (cnt3)
+7F40                  00215         clrf cnt3
+7F40                  00216 rptc
+Warning[207]: Found label after column 1. (btfss)
+Error[122]  : Illegal opcode (PIR1)
+7F40                  00217                 btfss PIR1,RCIF                 ;test RX
+Warning[207]: Found label after column 1. (bra)
+Error[122]  : Illegal opcode (notrcv)
+7F40                  00218                 bra notrcv
+Warning[207]: Found label after column 1. (movf)
+Error[122]  : Illegal opcode (RCREG)
+7F40                  00219             movf RCREG,w                        ;return read data in W
+Warning[207]: Found label after column 1. (addwf)
+Error[122]  : Illegal opcode (crc)
+7F40                  00220             addwf crc,f                         ;compute crc
+Warning[207]: Found label after column 1. (return)
+7F40                  00221                 return
+7F40                  00222 notrcv
+Warning[207]: Found label after column 1. (decfsz)
+Error[122]  : Illegal opcode (cnt3)
+7F40                  00223         decfsz cnt3
+Warning[207]: Found label after column 1. (bra)
+Error[122]  : Illegal opcode (rptc)
+7F40                  00224         bra rptc
+Warning[207]: Found label after column 1. (decfsz)
+Error[122]  : Illegal opcode (cnt2)
+7F40                  00225         decfsz cnt2
+Warning[207]: Found label after column 1. (bra)
+Error[122]  : Illegal opcode (rpt3)
+7F40                  00226         bra rpt3
+Warning[207]: Found label after column 1. (decfsz)
+Error[122]  : Illegal opcode (cnt1)
+7F40                  00227         decfsz cnt1
+Warning[207]: Found label after column 1. (bra)
+Error[122]  : Illegal opcode (rpt2)
+7F40                  00228         bra rpt2
+                      00229         ;timeout:
+7F40                  00230 way_to_exit
+Warning[207]: Found label after column 1. (bcf)
+Error[122]  : Illegal opcode (RCSTA)
+7F40                  00231         bcf     RCSTA,  SPEN                    ; deactivate UART
+MPASM 5.77   TINYB18F2455-2550-4455-4550.ASM   11-5-2018  19:32:27         PAGE 10
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[207]: Found label after column 1. (bra)
+Error[108]  : Illegal character (0)
+7F40                  00232         bra first_address
+                      00233 ;*************************************************************
+                      00234 ; After reset
+                      00235 ; Do not expect the memory to be zero,
+                      00236 ; Do not expect registers to be initialised like in catalog.
+                      00237 
+                      00238             END
+MPASM 5.77   TINYB18F2455-2550-4455-4550.ASM   11-5-2018  19:32:27         PAGE 11
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+Abs                               
+AbsResult                         000000B9
+IdTypePIC                         00000055
+IntrareBootloader                 00007F40
+MainLoop                          00007F40
+Receive                           00007F40
+Round                             
+RoundResult                       0001C2B9
+SendL                             
+Write                             00007F40
+__EEPROM8                         00000001
+baud                              0001C200
+baud_real                         0001C2B9
+buffer                            0000000A
+cnt1                              00000002
+cnt2                              00000003
+cnt3                              00000004
+counter_hi                        00000005
+counter_lo                        00000006
+crc                               00000000
+dummy4crc                         0000004A
+eraseloop                         00007F40
+errpercent                        00000000
+first_address                     max_flash-200
+flag                              00000007
+i                                 00000001
+mainl                             00007F40
+max_flash                         0x8000
+noeeprom                          00007F40
+nop                               00007F38
+notrcv                            00007F40
+rcvoct                            00007F40
+return                            00007F40
+rpt2                              00007F40
+rpt3                              00007F40
+rptc                              00007F40
+spbrg_value                       0000000C
+waitwre                           00007F40
+way_to_exit                       00007F40
+writebigloop                      00007F40
+writebyte                         00007F40
+writesloop                        00007F40
+xtal                              016E3600
+ziieroare                         00007F40
+MPASM 5.77   TINYB18F2455-2550-4455-4550.ASM   11-5-2018  19:32:27         PAGE 12
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+
+
+All other memory blocks unused.
+
+Memory Bytes Used:     0
+Memory Bytes Free:   128
+
+
+Errors   :    93
+Warnings :    92 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+

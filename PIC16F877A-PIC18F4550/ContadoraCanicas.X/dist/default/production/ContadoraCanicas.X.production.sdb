@@ -1,0 +1,699 @@
+[p LITE_MODE AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 6 ]
+"36 D:\Documents\ContadoraCanicas.X\ContadoraCanicas.c
+[e E1056 MaquinaEstados `uc
+Encendido 0
+Apagado 1
+]
+"62
+[e E1075 ContadorCanicas `uc
+Paro 0
+Arranque 1
+Configuracion 2
+]
+"65
+[e E1080 Operacion `uc
+MoverCaja 0
+ContarCanicas 1
+]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"500 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"69 D:\Documents\ContadoraCanicas.X\ContadoraCanicas.c
+[v _setup setup `(v  1 e 1 0 ]
+"102
+[v _loop loop `(v  1 e 1 0 ]
+"311
+[v _IOConfiguration IOConfiguration `(v  1 e 1 0 ]
+"342
+[v _Contador Contador `(uc  1 e 1 0 ]
+"355
+[v _ContadorBegin ContadorBegin `(v  1 e 1 0 ]
+"14 D:\Documents\ContadoraCanicas.X\Keypad4x4.c
+[v _KeypadBegin KeypadBegin `(v  1 e 1 0 ]
+"33
+[v _KeypadRead KeypadRead `(uc  1 e 1 0 ]
+"18 D:\Documents\ContadoraCanicas.X\LCD16x2.c
+[v _lcdBegin lcdBegin `(v  1 e 1 0 ]
+"42
+[v _lcdClear lcdClear `(v  1 e 1 0 ]
+"46
+[v _lcdSetCursor lcdSetCursor `(v  1 e 1 0 ]
+"64
+[v _lcdWrite lcdWrite `(v  1 e 1 0 ]
+"69
+[v _lcdPrint lcdPrint `(v  1 e 1 0 ]
+"125
+[v _WriteInstruction WriteInstruction `(v  1 e 1 0 ]
+"148
+[v _WriteData WriteData `(v  1 e 1 0 ]
+"171
+[v _ByteByNibble ByteByNibble `(v  1 e 1 0 ]
+"7 D:\Documents\ContadoraCanicas.X\source.c
+[v _main main `(i  1 e 2 0 ]
+"18
+[v _Initialization Initialization `(v  1 e 1 0 ]
+"44
+[v _CCP1Configuration CCP1Configuration `(v  1 e 1 0 ]
+"55
+[v _CCP2Configuration CCP2Configuration `(v  1 e 1 0 ]
+"63
+[v _pinMode pinMode `(v  1 e 1 0 ]
+"169
+[v _digitalWrite digitalWrite `(v  1 e 1 0 ]
+"260
+[v _digitalRead digitalRead `(uc  1 e 1 0 ]
+"450
+[v _SerialBegin SerialBegin `(uc  1 e 1 0 ]
+"511
+[v _SerialWrite SerialWrite `(v  1 e 1 0 ]
+"546
+[v _SerialRead SerialRead `(uc  1 e 1 0 ]
+"587
+[v _I2CMasterWaiting I2CMasterWaiting `(v  1 e 1 0 ]
+"626
+[v _delay delay `(v  1 e 1 0 ]
+"59 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h
+[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
+[s S193 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+]
+"181
+[u S200 . 1 `S193 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES200  1 e 1 @5 ]
+[s S151 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"233
+[u S160 . 1 `S151 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES160  1 e 1 @6 ]
+[s S130 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"295
+[u S139 . 1 `S130 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES139  1 e 1 @7 ]
+[s S172 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+"357
+[u S181 . 1 `S172 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES181  1 e 1 @8 ]
+"402
+[v _PORTE PORTE `VEuc  1 e 1 @9 ]
+[s S264 . 1 `uc 1 RE0 1 0 :1:0 
+`uc 1 RE1 1 0 :1:1 
+`uc 1 RE2 1 0 :1:2 
+]
+"414
+[u S268 . 1 `S264 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES268  1 e 1 @9 ]
+"737
+[v _T2CON T2CON `VEuc  1 e 1 @18 ]
+"808
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
+"815
+[v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
+"892
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @21 ]
+"906
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @23 ]
+"1059
+[v _TXREG TXREG `VEuc  1 e 1 @25 ]
+"1066
+[v _RCREG RCREG `VEuc  1 e 1 @26 ]
+"1080
+[v _CCPR2L CCPR2L `VEuc  1 e 1 @27 ]
+"1094
+[v _CCP2CON CCP2CON `VEuc  1 e 1 @29 ]
+"1152
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+"1159
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @31 ]
+[s S210 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 GO_nDONE 1 0 :1:2 
+`uc 1 CHS 1 0 :3:3 
+`uc 1 ADCS 1 0 :2:6 
+]
+"1190
+[s S216 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 GO 1 0 :1:2 
+`uc 1 CHS0 1 0 :1:3 
+`uc 1 CHS1 1 0 :1:4 
+`uc 1 CHS2 1 0 :1:5 
+`uc 1 ADCS0 1 0 :1:6 
+`uc 1 ADCS1 1 0 :1:7 
+]
+[s S224 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nDONE 1 0 :1:2 
+]
+[s S227 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 GO_DONE 1 0 :1:2 
+]
+[u S230 . 1 `S210 1 . 1 0 `S216 1 . 1 0 `S224 1 . 1 0 `S227 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES230  1 e 1 @31 ]
+[s S534 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nRBPU 1 0 :1:7 
+]
+"1275
+[s S541 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+]
+[u S545 . 1 `S534 1 . 1 0 `S541 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES545  1 e 1 @129 ]
+[s S113 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+]
+"1340
+[u S120 . 1 `S113 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES120  1 e 1 @133 ]
+[s S71 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"1392
+[u S80 . 1 `S71 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES80  1 e 1 @134 ]
+[s S50 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"1454
+[u S59 . 1 `S50 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES59  1 e 1 @135 ]
+[s S92 . 1 `uc 1 TRISD0 1 0 :1:0 
+`uc 1 TRISD1 1 0 :1:1 
+`uc 1 TRISD2 1 0 :1:2 
+`uc 1 TRISD3 1 0 :1:3 
+`uc 1 TRISD4 1 0 :1:4 
+`uc 1 TRISD5 1 0 :1:5 
+`uc 1 TRISD6 1 0 :1:6 
+`uc 1 TRISD7 1 0 :1:7 
+]
+"1516
+[u S101 . 1 `S92 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES101  1 e 1 @136 ]
+"1561
+[v _TRISE TRISE `VEuc  1 e 1 @137 ]
+"1754
+[v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
+"1816
+[v _PR2 PR2 `VEuc  1 e 1 @146 ]
+"1823
+[v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
+"1830
+[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
+"2080
+[v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+"2222
+[v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
+"2229
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @159 ]
+"2374
+[v _ACKDT ACKDT `VEb  1 e 0 @1165 ]
+"2377
+[v _ACKEN ACKEN `VEb  1 e 0 @1164 ]
+"2416
+[v _BRGH BRGH `VEb  1 e 0 @1218 ]
+"2452
+[v _CCP1X CCP1X `VEb  1 e 0 @189 ]
+"2455
+[v _CCP1Y CCP1Y `VEb  1 e 0 @188 ]
+"2476
+[v _CCP2X CCP2X `VEb  1 e 0 @237 ]
+"2479
+[v _CCP2Y CCP2Y `VEb  1 e 0 @236 ]
+"2515
+[v _CREN CREN `VEb  1 e 0 @196 ]
+"2563
+[v _FERR FERR `VEb  1 e 0 @194 ]
+"2569
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"2614
+[v _OERR OERR `VEb  1 e 0 @193 ]
+"2629
+[v _PEIE PEIE `VEb  1 e 0 @94 ]
+"2632
+[v _PEN PEN `VEb  1 e 0 @1162 ]
+"2737
+[v _RCEN RCEN `VEb  1 e 0 @1163 ]
+"2743
+[v _RCIF RCIF `VEb  1 e 0 @101 ]
+"2791
+[v _RSEN RSEN `VEb  1 e 0 @1161 ]
+"2806
+[v _SEN SEN `VEb  1 e 0 @1160 ]
+"2812
+[v _SPEN SPEN `VEb  1 e 0 @199 ]
+"2821
+[v _SSPIE SSPIE `VEb  1 e 0 @1123 ]
+"2824
+[v _SSPIF SSPIF `VEb  1 e 0 @99 ]
+"2842
+[v _SYNC SYNC `VEb  1 e 0 @1220 ]
+"2968
+[v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
+"2971
+[v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
+"2977
+[v _TRISC6 TRISC6 `VEb  1 e 0 @1086 ]
+"2980
+[v _TRISC7 TRISC7 `VEb  1 e 0 @1087 ]
+"3016
+[v _TRMT TRMT `VEb  1 e 0 @1217 ]
+"3031
+[v _TXEN TXEN `VEb  1 e 0 @1221 ]
+"3037
+[v _TXIF TXIF `VEb  1 e 0 @100 ]
+"358 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\doprnt.c
+[v _dpowers dpowers `DC[5]ui  1 s 10 dpowers ]
+"9 D:\Documents\ContadoraCanicas.X\ContadoraCanicas.c
+[v _Teclas Teclas `[4][4]uc  1 e 16 0 ]
+"16
+[v _Tecla Tecla `uc  1 e 1 0 ]
+"18
+[v _ROWS ROWS `DC[4]i  1 e 8 0 ]
+"19
+[v _COLS COLS `DC[4]i  1 e 8 0 ]
+"23
+[v _RS RS `DCuc  1 e 1 0 ]
+"24
+[v _RnW RnW `DCuc  1 e 1 0 ]
+"25
+[v _En En `DCuc  1 e 1 0 ]
+"26
+[v _D4 D4 `DCuc  1 e 1 0 ]
+"27
+[v _D5 D5 `DCuc  1 e 1 0 ]
+"28
+[v _D6 D6 `DCuc  1 e 1 0 ]
+"29
+[v _D7 D7 `DCuc  1 e 1 0 ]
+"31
+[v _FirstROW FirstROW `[16]uc  1 e 16 0 ]
+"32
+[v _SecondROW SecondROW `[16]uc  1 e 16 0 ]
+"36
+[v _Estado Estado `E1056  1 e 1 0 ]
+"40
+[v _MotorCanicas MotorCanicas `DCuc  1 e 1 0 ]
+"41
+[v _Banda Banda `DCuc  1 e 1 0 ]
+"42
+[v _Alarma Alarma `DCuc  1 e 1 0 ]
+"43
+[v _IndicadorCanicas IndicadorCanicas `DCuc  1 e 1 0 ]
+"44
+[v _SensorCanicas SensorCanicas `DCuc  1 e 1 0 ]
+"45
+[v _SensorCajas SensorCajas `DCuc  1 e 1 0 ]
+"49
+[v _Latch Latch `uc  1 e 1 0 ]
+"50
+[v _LatchB LatchB `uc  1 e 1 0 ]
+"51
+[v _LatchC LatchC `uc  1 e 1 0 ]
+"54
+[v _DataStorage DataStorage `[2]uc  1 e 2 0 ]
+"55
+[v _counter counter `uc  1 e 1 0 ]
+"56
+[v _Number Number `uc  1 e 1 0 ]
+"57
+[v _ContadorCanicasGlobal ContadorCanicasGlobal `ui  1 e 2 0 ]
+"58
+[v _CanicasActuales CanicasActuales `uc  1 e 1 0 ]
+"59
+[v _CajasCompletas CajasCompletas `uc  1 e 1 0 ]
+"62
+[v _Modo Modo `E1075  1 e 1 0 ]
+"65
+[v _Paso Paso `E1080  1 e 1 0 ]
+"4 D:\Documents\ContadoraCanicas.X\Keypad4x4.c
+[v _characters characters `[4][4]uc  1 s 16 characters ]
+"11
+[v _RowPins RowPins `[4]i  1 s 8 RowPins ]
+"12
+[v _ColPins ColPins `[4]i  1 s 8 ColPins ]
+"13
+[v _delaying delaying `i  1 e 2 0 ]
+"10 D:\Documents\ContadoraCanicas.X\LCD16x2.c
+[v _RSPin RSPin `i  1 e 2 0 ]
+"11
+[v _ENPin ENPin `i  1 e 2 0 ]
+"12
+[v _RWPin RWPin `i  1 e 2 0 ]
+"13
+[v _d4Pin d4Pin `i  1 e 2 0 ]
+"14
+[v _d5Pin d5Pin `i  1 e 2 0 ]
+"15
+[v _d6Pin d6Pin `i  1 e 2 0 ]
+"16
+[v _d7Pin d7Pin `i  1 e 2 0 ]
+"7 D:\Documents\ContadoraCanicas.X\source.c
+[v _main main `(i  1 e 2 0 ]
+{
+"16
+} 0
+"69 D:\Documents\ContadoraCanicas.X\ContadoraCanicas.c
+[v _setup setup `(v  1 e 1 0 ]
+{
+"93
+[v setup@j j `uc  1 a 1 19 ]
+"84
+[v setup@i i `uc  1 a 1 18 ]
+"99
+} 0
+"18 D:\Documents\ContadoraCanicas.X\LCD16x2.c
+[v _lcdBegin lcdBegin `(v  1 e 1 0 ]
+{
+[v lcdBegin@RS RS `uc  1 a 1 wreg ]
+[v lcdBegin@RS RS `uc  1 a 1 wreg ]
+[v lcdBegin@EN EN `uc  1 p 1 0 ]
+[v lcdBegin@R_W R_W `uc  1 p 1 1 ]
+[v lcdBegin@d4 d4 `uc  1 p 1 2 ]
+[v lcdBegin@d5 d5 `uc  1 p 1 3 ]
+[v lcdBegin@d6 d6 `uc  1 p 1 4 ]
+[v lcdBegin@d7 d7 `uc  1 p 1 5 ]
+"20
+[v lcdBegin@RS RS `uc  1 a 1 6 ]
+"41
+} 0
+"450 D:\Documents\ContadoraCanicas.X\source.c
+[v _SerialBegin SerialBegin `(uc  1 e 1 0 ]
+{
+"455
+[v SerialBegin@x x `ui  1 a 2 10 ]
+"450
+[v SerialBegin@BaudRate BaudRate `DCl  1 p 4 6 ]
+"486
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+{
+"10
+[v ___aldiv@quotient quotient `l  1 a 4 2 ]
+"11
+[v ___aldiv@sign sign `uc  1 a 1 1 ]
+[v ___aldiv@counter counter `uc  1 a 1 0 ]
+"5
+[v ___aldiv@divisor divisor `l  1 p 4 0 ]
+[v ___aldiv@dividend dividend `l  1 p 4 4 ]
+"41
+} 0
+"14 D:\Documents\ContadoraCanicas.X\Keypad4x4.c
+[v _KeypadBegin KeypadBegin `(v  1 e 1 0 ]
+{
+[v KeypadBegin@rows rows `*.24DCi  1 a 1 wreg ]
+"26
+[v KeypadBegin@k k `i  1 a 2 3 ]
+"24
+[v KeypadBegin@j j `i  1 a 2 1 ]
+"16
+[v KeypadBegin@i i `i  1 a 2 5 ]
+"14
+[v KeypadBegin@rows rows `*.24DCi  1 a 1 wreg ]
+[v KeypadBegin@cols cols `*.24DCi  1 p 1 4 ]
+[v KeypadBegin@data data `*.4[4]uc  1 p 1 5 ]
+"16
+[v KeypadBegin@rows rows `*.24DCi  1 a 1 0 ]
+"31
+} 0
+"311 D:\Documents\ContadoraCanicas.X\ContadoraCanicas.c
+[v _IOConfiguration IOConfiguration `(v  1 e 1 0 ]
+{
+"325
+} 0
+"63 D:\Documents\ContadoraCanicas.X\source.c
+[v _pinMode pinMode `(v  1 e 1 0 ]
+{
+[v pinMode@pin pin `uc  1 a 1 wreg ]
+[v pinMode@pin pin `uc  1 a 1 wreg ]
+[v pinMode@mode mode `uc  1 p 1 0 ]
+[v pinMode@pin pin `uc  1 a 1 3 ]
+"168
+} 0
+"355 D:\Documents\ContadoraCanicas.X\ContadoraCanicas.c
+[v _ContadorBegin ContadorBegin `(v  1 e 1 0 ]
+{
+"363
+} 0
+"102
+[v _loop loop `(v  1 e 1 0 ]
+{
+"309
+} 0
+"500 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+{
+[v sprintf@sp sp `*.4uc  1 a 1 wreg ]
+"540
+[v sprintf@val val `ui  1 a 2 11 ]
+"507
+[v sprintf@c c `uc  1 a 1 14 ]
+"520
+[v sprintf@flag flag `uc  1 a 1 10 ]
+"502
+[v sprintf@ap ap `[1]*.4v  1 a 1 9 ]
+"516
+[v sprintf@prec prec `c  1 a 1 8 ]
+"500
+[v sprintf@sp sp `*.4uc  1 a 1 wreg ]
+[v sprintf@f f `*.24DCuc  1 p 1 0 ]
+"545
+[v sprintf@sp sp `*.4uc  1 a 1 13 ]
+"1560
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 13 ]
+"5
+[v ___lwmod@divisor divisor `ui  1 p 2 8 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 10 ]
+"25
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 5 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 7 ]
+"5
+[v ___lwdiv@divisor divisor `ui  1 p 2 0 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
+"30
+} 0
+"46 D:\Documents\ContadoraCanicas.X\LCD16x2.c
+[v _lcdSetCursor lcdSetCursor `(v  1 e 1 0 ]
+{
+[v lcdSetCursor@row row `uc  1 a 1 wreg ]
+"48
+[v lcdSetCursor@location location `uc  1 a 1 1 ]
+"46
+[v lcdSetCursor@row row `uc  1 a 1 wreg ]
+[v lcdSetCursor@column column `uc  1 p 1 12 ]
+"48
+[v lcdSetCursor@row row `uc  1 a 1 0 ]
+"63
+} 0
+"69
+[v _lcdPrint lcdPrint `(v  1 e 1 0 ]
+{
+"71
+[v lcdPrint@i i `i  1 a 2 5 ]
+"69
+[v lcdPrint@string string `*.26uc  1 p 2 0 ]
+"75
+} 0
+"64
+[v _lcdWrite lcdWrite `(v  1 e 1 0 ]
+{
+[v lcdWrite@data data `uc  1 a 1 wreg ]
+[v lcdWrite@data data `uc  1 a 1 wreg ]
+"66
+[v lcdWrite@data data `uc  1 a 1 12 ]
+"68
+} 0
+"148
+[v _WriteData WriteData `(v  1 e 1 0 ]
+{
+[v WriteData@data data `uc  1 a 1 wreg ]
+"150
+[v WriteData@MSNibble MSNibble `uc  1 a 1 11 ]
+"151
+[v WriteData@LSNibble LSNibble `uc  1 a 1 9 ]
+"148
+[v WriteData@data data `uc  1 a 1 wreg ]
+"150
+[v WriteData@data data `uc  1 a 1 10 ]
+"169
+} 0
+"42
+[v _lcdClear lcdClear `(v  1 e 1 0 ]
+{
+"45
+} 0
+"125
+[v _WriteInstruction WriteInstruction `(v  1 e 1 0 ]
+{
+[v WriteInstruction@instruction instruction `uc  1 a 1 wreg ]
+"127
+[v WriteInstruction@MSNibble MSNibble `uc  1 a 1 11 ]
+"128
+[v WriteInstruction@LSNibble LSNibble `uc  1 a 1 9 ]
+"125
+[v WriteInstruction@instruction instruction `uc  1 a 1 wreg ]
+"127
+[v WriteInstruction@instruction instruction `uc  1 a 1 10 ]
+"146
+} 0
+"171
+[v _ByteByNibble ByteByNibble `(v  1 e 1 0 ]
+{
+[v ByteByNibble@NibbleValue NibbleValue `uc  1 a 1 wreg ]
+[v ByteByNibble@NibbleValue NibbleValue `uc  1 a 1 wreg ]
+[v ByteByNibble@NibbleValue NibbleValue `uc  1 a 1 6 ]
+"272
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+{
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+"6
+[v ___bmul@product product `uc  1 a 1 2 ]
+"4
+[v ___bmul@multiplier multiplier `uc  1 a 1 wreg ]
+[v ___bmul@multiplicand multiplicand `uc  1 p 1 0 ]
+"6
+[v ___bmul@multiplier multiplier `uc  1 a 1 3 ]
+"51
+} 0
+"33 D:\Documents\ContadoraCanicas.X\Keypad4x4.c
+[v _KeypadRead KeypadRead `(uc  1 e 1 0 ]
+{
+"192
+} 0
+"169 D:\Documents\ContadoraCanicas.X\source.c
+[v _digitalWrite digitalWrite `(v  1 e 1 0 ]
+{
+[v digitalWrite@pin pin `uc  1 a 1 wreg ]
+[v digitalWrite@pin pin `uc  1 a 1 wreg ]
+[v digitalWrite@value value `uc  1 p 1 0 ]
+[v digitalWrite@pin pin `uc  1 a 1 3 ]
+"259
+} 0
+"260
+[v _digitalRead digitalRead `(uc  1 e 1 0 ]
+{
+[v digitalRead@pin pin `uc  1 a 1 wreg ]
+[v digitalRead@pin pin `uc  1 a 1 wreg ]
+[v digitalRead@pin pin `uc  1 a 1 2 ]
+"348
+} 0
+"626
+[v _delay delay `(v  1 e 1 0 ]
+{
+"631
+[v delay@i i `i  1 a 2 5 ]
+"628
+[v delay@j j `i  1 a 2 3 ]
+"626
+[v delay@milis milis `DCi  1 p 2 0 ]
+"636
+} 0
+"342 D:\Documents\ContadoraCanicas.X\ContadoraCanicas.c
+[v _Contador Contador `(uc  1 e 1 0 ]
+{
+[v Contador@mode mode `uc  1 a 1 wreg ]
+[v Contador@mode mode `uc  1 a 1 wreg ]
+"344
+[v Contador@mode mode `uc  1 a 1 0 ]
+"353
+} 0
+"18 D:\Documents\ContadoraCanicas.X\source.c
+[v _Initialization Initialization `(v  1 e 1 0 ]
+{
+"43
+} 0
+"55
+[v _CCP2Configuration CCP2Configuration `(v  1 e 1 0 ]
+{
+"58
+} 0
+"44
+[v _CCP1Configuration CCP1Configuration `(v  1 e 1 0 ]
+{
+"49
+} 0
