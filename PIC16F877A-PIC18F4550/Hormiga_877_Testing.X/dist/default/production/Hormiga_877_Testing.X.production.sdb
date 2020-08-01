@@ -1,0 +1,373 @@
+[p LITE_MODE AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 6 ]
+"4 D:\Documents\Hormiga_877_Testing.X\application.c
+[v _setup setup `(v  1 e 1 0 ]
+"9
+[v _loop loop `(v  1 e 1 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"5 D:\Documents\Hormiga_877_Testing.X\Servo.c
+[v _ServoAttach ServoAttach `(v  1 e 1 0 ]
+"11
+[v _ServoWrite ServoWrite `(v  1 e 1 0 ]
+"7 D:\Documents\Hormiga_877_Testing.X\source.c
+[v _main main `(i  1 e 2 0 ]
+"18
+[v _Initialization Initialization `(v  1 e 1 0 ]
+"44
+[v _CCP1Configuration CCP1Configuration `(v  1 e 1 0 ]
+"55
+[v _CCP2Configuration CCP2Configuration `(v  1 e 1 0 ]
+"63
+[v _pinMode pinMode `(v  1 e 1 0 ]
+"162
+[v _digitalWrite digitalWrite `(v  1 e 1 0 ]
+"498
+[v _SerialWrite SerialWrite `(v  1 e 1 0 ]
+"533
+[v _SerialRead SerialRead `(uc  1 e 1 0 ]
+"574
+[v _I2CMasterWaiting I2CMasterWaiting `(v  1 e 1 0 ]
+"613
+[v _delay delay `(v  1 e 1 0 ]
+"625
+[v _delayMicroseconds delayMicroseconds `(v  1 e 1 0 ]
+[s S228 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+]
+"181 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h
+[u S235 . 1 `S228 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES235  1 e 1 @5 ]
+[s S207 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"233
+[u S216 . 1 `S207 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES216  1 e 1 @6 ]
+[s S165 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"295
+[u S174 . 1 `S165 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES174  1 e 1 @7 ]
+[s S186 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+"357
+[u S195 . 1 `S186 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES195  1 e 1 @8 ]
+"402
+[v _PORTE PORTE `VEuc  1 e 1 @9 ]
+[s S299 . 1 `uc 1 RE0 1 0 :1:0 
+`uc 1 RE1 1 0 :1:1 
+`uc 1 RE2 1 0 :1:2 
+]
+"414
+[u S303 . 1 `S299 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES303  1 e 1 @9 ]
+"737
+[v _T2CON T2CON `VEuc  1 e 1 @18 ]
+"808
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
+"815
+[v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
+"892
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @21 ]
+"906
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @23 ]
+"1059
+[v _TXREG TXREG `VEuc  1 e 1 @25 ]
+"1066
+[v _RCREG RCREG `VEuc  1 e 1 @26 ]
+"1080
+[v _CCPR2L CCPR2L `VEuc  1 e 1 @27 ]
+"1094
+[v _CCP2CON CCP2CON `VEuc  1 e 1 @29 ]
+"1152
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+"1159
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @31 ]
+[s S245 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 GO_nDONE 1 0 :1:2 
+`uc 1 CHS 1 0 :3:3 
+`uc 1 ADCS 1 0 :2:6 
+]
+"1190
+[s S251 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 GO 1 0 :1:2 
+`uc 1 CHS0 1 0 :1:3 
+`uc 1 CHS1 1 0 :1:4 
+`uc 1 CHS2 1 0 :1:5 
+`uc 1 ADCS0 1 0 :1:6 
+`uc 1 ADCS1 1 0 :1:7 
+]
+[s S259 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nDONE 1 0 :1:2 
+]
+[s S262 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 GO_DONE 1 0 :1:2 
+]
+[u S265 . 1 `S245 1 . 1 0 `S251 1 . 1 0 `S259 1 . 1 0 `S262 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES265  1 e 1 @31 ]
+[s S124 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+]
+"1340
+[u S131 . 1 `S124 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES131  1 e 1 @133 ]
+[s S103 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"1392
+[u S112 . 1 `S103 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES112  1 e 1 @134 ]
+[s S61 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"1454
+[u S70 . 1 `S61 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES70  1 e 1 @135 ]
+[s S82 . 1 `uc 1 TRISD0 1 0 :1:0 
+`uc 1 TRISD1 1 0 :1:1 
+`uc 1 TRISD2 1 0 :1:2 
+`uc 1 TRISD3 1 0 :1:3 
+`uc 1 TRISD4 1 0 :1:4 
+`uc 1 TRISD5 1 0 :1:5 
+`uc 1 TRISD6 1 0 :1:6 
+`uc 1 TRISD7 1 0 :1:7 
+]
+"1516
+[u S91 . 1 `S82 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES91  1 e 1 @136 ]
+"1561
+[v _TRISE TRISE `VEuc  1 e 1 @137 ]
+"1754
+[v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
+"1816
+[v _PR2 PR2 `VEuc  1 e 1 @146 ]
+"1823
+[v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
+"1830
+[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
+"2080
+[v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+"2222
+[v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
+"2229
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @159 ]
+[s S141 . 1 `uc 1 PCFG 1 0 :4:0 
+`uc 1 . 1 0 :2:4 
+`uc 1 ADCS2 1 0 :1:6 
+`uc 1 ADFM 1 0 :1:7 
+]
+"2248
+[s S146 . 1 `uc 1 PCFG0 1 0 :1:0 
+`uc 1 PCFG1 1 0 :1:1 
+`uc 1 PCFG2 1 0 :1:2 
+`uc 1 PCFG3 1 0 :1:3 
+]
+[u S151 . 1 `S141 1 . 1 0 `S146 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES151  1 e 1 @159 ]
+"2374
+[v _ACKDT ACKDT `VEb  1 e 0 @1165 ]
+"2377
+[v _ACKEN ACKEN `VEb  1 e 0 @1164 ]
+"2416
+[v _BRGH BRGH `VEb  1 e 0 @1218 ]
+"2452
+[v _CCP1X CCP1X `VEb  1 e 0 @189 ]
+"2455
+[v _CCP1Y CCP1Y `VEb  1 e 0 @188 ]
+"2476
+[v _CCP2X CCP2X `VEb  1 e 0 @237 ]
+"2479
+[v _CCP2Y CCP2Y `VEb  1 e 0 @236 ]
+"2515
+[v _CREN CREN `VEb  1 e 0 @196 ]
+"2563
+[v _FERR FERR `VEb  1 e 0 @194 ]
+"2569
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"2614
+[v _OERR OERR `VEb  1 e 0 @193 ]
+"2629
+[v _PEIE PEIE `VEb  1 e 0 @94 ]
+"2632
+[v _PEN PEN `VEb  1 e 0 @1162 ]
+"2737
+[v _RCEN RCEN `VEb  1 e 0 @1163 ]
+"2743
+[v _RCIF RCIF `VEb  1 e 0 @101 ]
+"2791
+[v _RSEN RSEN `VEb  1 e 0 @1161 ]
+"2806
+[v _SEN SEN `VEb  1 e 0 @1160 ]
+"2812
+[v _SPEN SPEN `VEb  1 e 0 @199 ]
+"2821
+[v _SSPIE SSPIE `VEb  1 e 0 @1123 ]
+"2824
+[v _SSPIF SSPIF `VEb  1 e 0 @99 ]
+"2842
+[v _SYNC SYNC `VEb  1 e 0 @1220 ]
+"2968
+[v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
+"2971
+[v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
+"2977
+[v _TRISC6 TRISC6 `VEb  1 e 0 @1086 ]
+"2980
+[v _TRISC7 TRISC7 `VEb  1 e 0 @1087 ]
+"3016
+[v _TRMT TRMT `VEb  1 e 0 @1217 ]
+"3031
+[v _TXEN TXEN `VEb  1 e 0 @1221 ]
+"3037
+[v _TXIF TXIF `VEb  1 e 0 @100 ]
+"3 D:\Documents\Hormiga_877_Testing.X\Servo.c
+[v _ServoValue ServoValue `uc  1 e 1 0 ]
+"10 D:\Documents\Hormiga_877_Testing.X\SPDT.c
+[v _Information Information `uc  1 e 1 0 ]
+"11
+[v _Clocking Clocking `uc  1 e 1 0 ]
+"7 D:\Documents\Hormiga_877_Testing.X\source.c
+[v _main main `(i  1 e 2 0 ]
+{
+"16
+} 0
+"4 D:\Documents\Hormiga_877_Testing.X\application.c
+[v _setup setup `(v  1 e 1 0 ]
+{
+"7
+} 0
+"5 D:\Documents\Hormiga_877_Testing.X\Servo.c
+[v _ServoAttach ServoAttach `(v  1 e 1 0 ]
+{
+[v ServoAttach@PinValue PinValue `uc  1 a 1 wreg ]
+[v ServoAttach@PinValue PinValue `uc  1 a 1 wreg ]
+"7
+[v ServoAttach@PinValue PinValue `uc  1 a 1 5 ]
+"9
+} 0
+"63 D:\Documents\Hormiga_877_Testing.X\source.c
+[v _pinMode pinMode `(v  1 e 1 0 ]
+{
+[v pinMode@pin pin `uc  1 a 1 wreg ]
+[v pinMode@pin pin `uc  1 a 1 wreg ]
+[v pinMode@mode mode `uc  1 p 1 0 ]
+[v pinMode@pin pin `uc  1 a 1 3 ]
+"161
+} 0
+"9 D:\Documents\Hormiga_877_Testing.X\application.c
+[v _loop loop `(v  1 e 1 0 ]
+{
+"17
+} 0
+"613 D:\Documents\Hormiga_877_Testing.X\source.c
+[v _delay delay `(v  1 e 1 0 ]
+{
+"618
+[v delay@i i `i  1 a 2 5 ]
+"615
+[v delay@j j `i  1 a 2 3 ]
+"613
+[v delay@milis milis `DCi  1 p 2 0 ]
+"623
+} 0
+"11 D:\Documents\Hormiga_877_Testing.X\Servo.c
+[v _ServoWrite ServoWrite `(v  1 e 1 0 ]
+{
+"28
+[v ServoWrite@k k `ui  1 a 2 4 ]
+"23
+[v ServoWrite@j j `ui  1 a 2 2 ]
+"17
+[v ServoWrite@i i `ui  1 a 2 8 ]
+[v ServoWrite@timeOn timeOn `ui  1 a 2 6 ]
+[v ServoWrite@timeOff timeOff `ui  1 a 2 0 ]
+"11
+[v ServoWrite@DegreesValue DegreesValue `ui  1 p 2 4 ]
+"33
+} 0
+"162 D:\Documents\Hormiga_877_Testing.X\source.c
+[v _digitalWrite digitalWrite `(v  1 e 1 0 ]
+{
+[v digitalWrite@pin pin `uc  1 a 1 wreg ]
+[v digitalWrite@pin pin `uc  1 a 1 wreg ]
+[v digitalWrite@value value `uc  1 p 1 0 ]
+[v digitalWrite@pin pin `uc  1 a 1 3 ]
+"248
+} 0
+"18
+[v _Initialization Initialization `(v  1 e 1 0 ]
+{
+"43
+} 0
+"55
+[v _CCP2Configuration CCP2Configuration `(v  1 e 1 0 ]
+{
+"58
+} 0
+"44
+[v _CCP1Configuration CCP1Configuration `(v  1 e 1 0 ]
+{
+"49
+} 0
