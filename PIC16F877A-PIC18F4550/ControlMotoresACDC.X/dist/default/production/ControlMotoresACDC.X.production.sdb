@@ -1,0 +1,585 @@
+[p LITE_MODE AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 6 ]
+"41 D:\Documents\ControlMotoresACDC.X\CodigoYoselinYDiana.c
+[e E1062 Maquina `uc
+Encendido 0
+Apagado 1
+]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"500 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"44 D:\Documents\ControlMotoresACDC.X\CodigoYoselinYDiana.c
+[v _setup setup `(v  1 e 1 0 ]
+"57
+[v _loop loop `(v  1 e 1 0 ]
+"103
+[v _ModoApagado ModoApagado `(v  1 e 1 0 ]
+"115
+[v _ModoEncendido ModoEncendido `(v  1 e 1 0 ]
+"156
+[v _Contador Contador `(ui  1 e 2 0 ]
+"182
+[v _MotorDC MotorDC `(v  1 e 1 0 ]
+"22 D:\Documents\ControlMotoresACDC.X\LCD16x2.c
+[v _lcdBegin lcdBegin `(v  1 e 1 0 ]
+"45
+[v _lcdClear lcdClear `(v  1 e 1 0 ]
+"49
+[v _lcdSetCursor lcdSetCursor `(v  1 e 1 0 ]
+"67
+[v _lcdWrite lcdWrite `(v  1 e 1 0 ]
+"72
+[v _lcdPrint lcdPrint `(v  1 e 1 0 ]
+"128
+[v _WriteInstruction WriteInstruction `(v  1 e 1 0 ]
+"151
+[v _WriteData WriteData `(v  1 e 1 0 ]
+"174
+[v _ByteByNibble ByteByNibble `(v  1 e 1 0 ]
+"7 D:\Documents\ControlMotoresACDC.X\source.c
+[v _main main `(i  1 e 2 0 ]
+"18
+[v _Initialization Initialization `(v  1 e 1 0 ]
+"44
+[v _CCP1Configuration CCP1Configuration `(v  1 e 1 0 ]
+"55
+[v _CCP2Configuration CCP2Configuration `(v  1 e 1 0 ]
+"63
+[v _pinMode pinMode `(v  1 e 1 0 ]
+"169
+[v _digitalWrite digitalWrite `(v  1 e 1 0 ]
+"349
+[v _analogRead analogRead `(ui  1 e 2 0 ]
+"430
+[v _PBRead PBRead `(uc  1 e 1 0 ]
+"511
+[v _SerialWrite SerialWrite `(v  1 e 1 0 ]
+"546
+[v _SerialRead SerialRead `(uc  1 e 1 0 ]
+"587
+[v _I2CMasterWaiting I2CMasterWaiting `(v  1 e 1 0 ]
+"626
+[v _delay delay `(v  1 e 1 0 ]
+[s S193 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+]
+"181 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h
+[u S200 . 1 `S193 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES200  1 e 1 @5 ]
+[s S151 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"233
+[u S160 . 1 `S151 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES160  1 e 1 @6 ]
+[s S130 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"295
+[u S139 . 1 `S130 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES139  1 e 1 @7 ]
+[s S172 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+"357
+[u S181 . 1 `S172 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES181  1 e 1 @8 ]
+"402
+[v _PORTE PORTE `VEuc  1 e 1 @9 ]
+[s S264 . 1 `uc 1 RE0 1 0 :1:0 
+`uc 1 RE1 1 0 :1:1 
+`uc 1 RE2 1 0 :1:2 
+]
+"414
+[u S268 . 1 `S264 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES268  1 e 1 @9 ]
+"737
+[v _T2CON T2CON `VEuc  1 e 1 @18 ]
+"808
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
+"815
+[v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
+"892
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @21 ]
+"906
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @23 ]
+"1059
+[v _TXREG TXREG `VEuc  1 e 1 @25 ]
+"1066
+[v _RCREG RCREG `VEuc  1 e 1 @26 ]
+"1080
+[v _CCPR2L CCPR2L `VEuc  1 e 1 @27 ]
+"1094
+[v _CCP2CON CCP2CON `VEuc  1 e 1 @29 ]
+"1152
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+"1159
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @31 ]
+[s S210 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 GO_nDONE 1 0 :1:2 
+`uc 1 CHS 1 0 :3:3 
+`uc 1 ADCS 1 0 :2:6 
+]
+"1190
+[s S216 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 GO 1 0 :1:2 
+`uc 1 CHS0 1 0 :1:3 
+`uc 1 CHS1 1 0 :1:4 
+`uc 1 CHS2 1 0 :1:5 
+`uc 1 ADCS0 1 0 :1:6 
+`uc 1 ADCS1 1 0 :1:7 
+]
+[s S224 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nDONE 1 0 :1:2 
+]
+[s S227 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 GO_DONE 1 0 :1:2 
+]
+[u S230 . 1 `S210 1 . 1 0 `S216 1 . 1 0 `S224 1 . 1 0 `S227 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES230  1 e 1 @31 ]
+[s S113 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+]
+"1340
+[u S120 . 1 `S113 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES120  1 e 1 @133 ]
+[s S71 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"1392
+[u S80 . 1 `S71 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES80  1 e 1 @134 ]
+[s S50 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"1454
+[u S59 . 1 `S50 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES59  1 e 1 @135 ]
+[s S92 . 1 `uc 1 TRISD0 1 0 :1:0 
+`uc 1 TRISD1 1 0 :1:1 
+`uc 1 TRISD2 1 0 :1:2 
+`uc 1 TRISD3 1 0 :1:3 
+`uc 1 TRISD4 1 0 :1:4 
+`uc 1 TRISD5 1 0 :1:5 
+`uc 1 TRISD6 1 0 :1:6 
+`uc 1 TRISD7 1 0 :1:7 
+]
+"1516
+[u S101 . 1 `S92 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES101  1 e 1 @136 ]
+"1561
+[v _TRISE TRISE `VEuc  1 e 1 @137 ]
+"1754
+[v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
+"1816
+[v _PR2 PR2 `VEuc  1 e 1 @146 ]
+"1823
+[v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
+"1830
+[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
+"2080
+[v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+"2222
+[v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
+"2229
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @159 ]
+"2374
+[v _ACKDT ACKDT `VEb  1 e 0 @1165 ]
+"2377
+[v _ACKEN ACKEN `VEb  1 e 0 @1164 ]
+"2416
+[v _BRGH BRGH `VEb  1 e 0 @1218 ]
+"2452
+[v _CCP1X CCP1X `VEb  1 e 0 @189 ]
+"2455
+[v _CCP1Y CCP1Y `VEb  1 e 0 @188 ]
+"2476
+[v _CCP2X CCP2X `VEb  1 e 0 @237 ]
+"2479
+[v _CCP2Y CCP2Y `VEb  1 e 0 @236 ]
+"2515
+[v _CREN CREN `VEb  1 e 0 @196 ]
+"2563
+[v _FERR FERR `VEb  1 e 0 @194 ]
+"2569
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"2614
+[v _OERR OERR `VEb  1 e 0 @193 ]
+"2629
+[v _PEIE PEIE `VEb  1 e 0 @94 ]
+"2632
+[v _PEN PEN `VEb  1 e 0 @1162 ]
+"2737
+[v _RCEN RCEN `VEb  1 e 0 @1163 ]
+"2743
+[v _RCIF RCIF `VEb  1 e 0 @101 ]
+"2791
+[v _RSEN RSEN `VEb  1 e 0 @1161 ]
+"2806
+[v _SEN SEN `VEb  1 e 0 @1160 ]
+"2812
+[v _SPEN SPEN `VEb  1 e 0 @199 ]
+"2821
+[v _SSPIE SSPIE `VEb  1 e 0 @1123 ]
+"2824
+[v _SSPIF SSPIF `VEb  1 e 0 @99 ]
+"2842
+[v _SYNC SYNC `VEb  1 e 0 @1220 ]
+"2968
+[v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
+"2971
+[v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
+"2977
+[v _TRISC6 TRISC6 `VEb  1 e 0 @1086 ]
+"2980
+[v _TRISC7 TRISC7 `VEb  1 e 0 @1087 ]
+"3016
+[v _TRMT TRMT `VEb  1 e 0 @1217 ]
+"3031
+[v _TXEN TXEN `VEb  1 e 0 @1221 ]
+"3037
+[v _TXIF TXIF `VEb  1 e 0 @100 ]
+"358 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\doprnt.c
+[v _dpowers dpowers `DC[5]ui  1 s 10 dpowers ]
+"19 D:\Documents\ControlMotoresACDC.X\CodigoYoselinYDiana.c
+[v _Rs Rs `DCi  1 e 2 0 ]
+"20
+[v _En En `DCi  1 e 2 0 ]
+"21
+[v _RW RW `DCi  1 e 2 0 ]
+"23
+[v _D4 D4 `DCi  1 e 2 0 ]
+"24
+[v _D5 D5 `DCi  1 e 2 0 ]
+"25
+[v _D6 D6 `DCi  1 e 2 0 ]
+"26
+[v _D7 D7 `DCi  1 e 2 0 ]
+"28
+[v _MotorAC MotorAC `DCui  1 e 2 0 ]
+"29
+[v _MotorDCP MotorDCP `DCui  1 e 2 0 ]
+"30
+[v _MotorDCN MotorDCN `DCui  1 e 2 0 ]
+"32
+[v _SensorProximidad SensorProximidad `DCui  1 e 2 0 ]
+"33
+[v _Alarma Alarma `DCui  1 e 2 0 ]
+"35
+[v _ControlEncendido ControlEncendido `DCui  1 e 2 0 ]
+"37
+[v _FirstROW FirstROW `[16]uc  1 e 16 0 ]
+"41
+[v _Estado Estado `E1062  1 e 1 0 ]
+"14 D:\Documents\ControlMotoresACDC.X\LCD16x2.c
+[v _RSPin RSPin `i  1 e 2 0 ]
+"15
+[v _ENPin ENPin `i  1 e 2 0 ]
+"16
+[v _RWPin RWPin `i  1 e 2 0 ]
+"17
+[v _d4Pin d4Pin `i  1 e 2 0 ]
+"18
+[v _d5Pin d5Pin `i  1 e 2 0 ]
+"19
+[v _d6Pin d6Pin `i  1 e 2 0 ]
+"20
+[v _d7Pin d7Pin `i  1 e 2 0 ]
+"7 D:\Documents\ControlMotoresACDC.X\source.c
+[v _main main `(i  1 e 2 0 ]
+{
+"16
+} 0
+"44 D:\Documents\ControlMotoresACDC.X\CodigoYoselinYDiana.c
+[v _setup setup `(v  1 e 1 0 ]
+{
+"54
+} 0
+"22 D:\Documents\ControlMotoresACDC.X\LCD16x2.c
+[v _lcdBegin lcdBegin `(v  1 e 1 0 ]
+{
+[v lcdBegin@RS RS `uc  1 a 1 wreg ]
+[v lcdBegin@RS RS `uc  1 a 1 wreg ]
+[v lcdBegin@EN EN `uc  1 p 1 0 ]
+[v lcdBegin@R_W R_W `uc  1 p 1 1 ]
+[v lcdBegin@d4 d4 `uc  1 p 1 2 ]
+[v lcdBegin@d5 d5 `uc  1 p 1 3 ]
+[v lcdBegin@d6 d6 `uc  1 p 1 4 ]
+[v lcdBegin@d7 d7 `uc  1 p 1 5 ]
+"24
+[v lcdBegin@RS RS `uc  1 a 1 6 ]
+"44
+} 0
+"63 D:\Documents\ControlMotoresACDC.X\source.c
+[v _pinMode pinMode `(v  1 e 1 0 ]
+{
+[v pinMode@pin pin `uc  1 a 1 wreg ]
+[v pinMode@pin pin `uc  1 a 1 wreg ]
+[v pinMode@mode mode `uc  1 p 1 0 ]
+[v pinMode@pin pin `uc  1 a 1 3 ]
+"168
+} 0
+"57 D:\Documents\ControlMotoresACDC.X\CodigoYoselinYDiana.c
+[v _loop loop `(v  1 e 1 0 ]
+{
+"85
+[v loop@i i `uc  1 a 1 16 ]
+"101
+} 0
+"45 D:\Documents\ControlMotoresACDC.X\LCD16x2.c
+[v _lcdClear lcdClear `(v  1 e 1 0 ]
+{
+"48
+} 0
+"430 D:\Documents\ControlMotoresACDC.X\source.c
+[v _PBRead PBRead `(uc  1 e 1 0 ]
+{
+[v PBRead@pin pin `uc  1 a 1 wreg ]
+[v PBRead@pin pin `uc  1 a 1 wreg ]
+[v PBRead@pin pin `uc  1 a 1 2 ]
+"444
+} 0
+"115 D:\Documents\ControlMotoresACDC.X\CodigoYoselinYDiana.c
+[v _ModoEncendido ModoEncendido `(v  1 e 1 0 ]
+{
+"117
+[v ModoEncendido@contar contar `i  1 s 2 contar ]
+"155
+} 0
+"500 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+{
+[v sprintf@sp sp `*.4uc  1 a 1 wreg ]
+"540
+[v sprintf@val val `ui  1 a 2 9 ]
+"507
+[v sprintf@c c `uc  1 a 1 12 ]
+"516
+[v sprintf@prec prec `c  1 a 1 8 ]
+"520
+[v sprintf@flag flag `uc  1 a 1 7 ]
+"502
+[v sprintf@ap ap `[1]*.4v  1 a 1 6 ]
+"500
+[v sprintf@sp sp `*.4uc  1 a 1 wreg ]
+[v sprintf@f f `*.24DCuc  1 p 1 0 ]
+"545
+[v sprintf@sp sp `*.4uc  1 a 1 11 ]
+"1560
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 13 ]
+"5
+[v ___lwmod@divisor divisor `ui  1 p 2 8 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 10 ]
+"25
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 5 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 7 ]
+"5
+[v ___lwdiv@divisor divisor `ui  1 p 2 0 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
+"30
+} 0
+"182 D:\Documents\ControlMotoresACDC.X\CodigoYoselinYDiana.c
+[v _MotorDC MotorDC `(v  1 e 1 0 ]
+{
+[v MotorDC@Mode Mode `ui  1 p 2 4 ]
+"199
+} 0
+"156
+[v _Contador Contador `(ui  1 e 2 0 ]
+{
+[v Contador@mode mode `ui  1 p 2 7 ]
+"158
+[v Contador@Threshold Threshold `DCui  1 s 2 Threshold ]
+"159
+[v Contador@cuenta cuenta `i  1 s 2 cuenta ]
+"180
+} 0
+"349 D:\Documents\ControlMotoresACDC.X\source.c
+[v _analogRead analogRead `(ui  1 e 2 0 ]
+{
+[v analogRead@channel channel `uc  1 a 1 wreg ]
+[v analogRead@channel channel `uc  1 a 1 wreg ]
+[v analogRead@channel channel `uc  1 a 1 4 ]
+"409
+} 0
+"103 D:\Documents\ControlMotoresACDC.X\CodigoYoselinYDiana.c
+[v _ModoApagado ModoApagado `(v  1 e 1 0 ]
+{
+"113
+} 0
+"49 D:\Documents\ControlMotoresACDC.X\LCD16x2.c
+[v _lcdSetCursor lcdSetCursor `(v  1 e 1 0 ]
+{
+[v lcdSetCursor@row row `uc  1 a 1 wreg ]
+"51
+[v lcdSetCursor@location location `uc  1 a 1 1 ]
+"49
+[v lcdSetCursor@row row `uc  1 a 1 wreg ]
+[v lcdSetCursor@column column `uc  1 p 1 12 ]
+"51
+[v lcdSetCursor@row row `uc  1 a 1 0 ]
+"66
+} 0
+"128
+[v _WriteInstruction WriteInstruction `(v  1 e 1 0 ]
+{
+[v WriteInstruction@instruction instruction `uc  1 a 1 wreg ]
+"130
+[v WriteInstruction@MSNibble MSNibble `uc  1 a 1 11 ]
+"131
+[v WriteInstruction@LSNibble LSNibble `uc  1 a 1 9 ]
+"128
+[v WriteInstruction@instruction instruction `uc  1 a 1 wreg ]
+"130
+[v WriteInstruction@instruction instruction `uc  1 a 1 10 ]
+"149
+} 0
+"72
+[v _lcdPrint lcdPrint `(v  1 e 1 0 ]
+{
+"74
+[v lcdPrint@i i `i  1 a 2 5 ]
+"72
+[v lcdPrint@string string `*.26uc  1 p 2 0 ]
+"78
+} 0
+"67
+[v _lcdWrite lcdWrite `(v  1 e 1 0 ]
+{
+[v lcdWrite@data data `uc  1 a 1 wreg ]
+[v lcdWrite@data data `uc  1 a 1 wreg ]
+"69
+[v lcdWrite@data data `uc  1 a 1 12 ]
+"71
+} 0
+"151
+[v _WriteData WriteData `(v  1 e 1 0 ]
+{
+[v WriteData@data data `uc  1 a 1 wreg ]
+"153
+[v WriteData@MSNibble MSNibble `uc  1 a 1 11 ]
+"154
+[v WriteData@LSNibble LSNibble `uc  1 a 1 9 ]
+"151
+[v WriteData@data data `uc  1 a 1 wreg ]
+"153
+[v WriteData@data data `uc  1 a 1 10 ]
+"172
+} 0
+"626 D:\Documents\ControlMotoresACDC.X\source.c
+[v _delay delay `(v  1 e 1 0 ]
+{
+"631
+[v delay@i i `i  1 a 2 5 ]
+"628
+[v delay@j j `i  1 a 2 3 ]
+"626
+[v delay@milis milis `DCi  1 p 2 0 ]
+"636
+} 0
+"174 D:\Documents\ControlMotoresACDC.X\LCD16x2.c
+[v _ByteByNibble ByteByNibble `(v  1 e 1 0 ]
+{
+[v ByteByNibble@NibbleValue NibbleValue `uc  1 a 1 wreg ]
+[v ByteByNibble@NibbleValue NibbleValue `uc  1 a 1 wreg ]
+[v ByteByNibble@NibbleValue NibbleValue `uc  1 a 1 6 ]
+"275
+} 0
+"169 D:\Documents\ControlMotoresACDC.X\source.c
+[v _digitalWrite digitalWrite `(v  1 e 1 0 ]
+{
+[v digitalWrite@pin pin `uc  1 a 1 wreg ]
+[v digitalWrite@pin pin `uc  1 a 1 wreg ]
+[v digitalWrite@value value `uc  1 p 1 0 ]
+[v digitalWrite@pin pin `uc  1 a 1 3 ]
+"259
+} 0
+"18
+[v _Initialization Initialization `(v  1 e 1 0 ]
+{
+"43
+} 0
+"55
+[v _CCP2Configuration CCP2Configuration `(v  1 e 1 0 ]
+{
+"58
+} 0
+"44
+[v _CCP1Configuration CCP1Configuration `(v  1 e 1 0 ]
+{
+"49
+} 0

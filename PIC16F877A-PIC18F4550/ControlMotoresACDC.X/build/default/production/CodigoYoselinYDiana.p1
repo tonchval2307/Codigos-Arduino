@@ -1,0 +1,858 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"41 CodigoYoselinYDiana.c
+[; ;CodigoYoselinYDiana.c: 41: enum Maquina Estado = Apagado;
+[c E1062 0 1 .. ]
+[n E1062 Maquina Encendido Apagado  ]
+"57 ./LCD16x2.h
+[; ;./LCD16x2.h: 57:     void lcdBegin(char RS, char EN, char R_W, char d4, char d5, char d6,char d7);
+[v _lcdBegin `(v ~T0 @X0 0 ef7`uc`uc`uc`uc`uc`uc`uc ]
+"40
+[; ;./LCD16x2.h: 40:     void lcdClear(void);
+[v _lcdClear `(v ~T0 @X0 0 ef ]
+"37 ./system.h
+[; ;./system.h: 37: void pinMode(char pin, char mode);
+[v _pinMode `(v ~T0 @X0 0 ef2`uc`uc ]
+"15 ./ControlMotores.h
+[; ;./ControlMotores.h: 15: void ModoApagado(void);
+[v _ModoApagado `(v ~T0 @X0 0 ef ]
+"36 ./system.h
+[; ;./system.h: 36: char PBRead(char pin);
+[v _PBRead `(uc ~T0 @X0 0 ef1`uc ]
+"69
+[; ;./system.h: 69: void delay(const int milis);
+[v _delay `(v ~T0 @X0 0 ef1`Ci ]
+"16 ./ControlMotores.h
+[; ;./ControlMotores.h: 16: void ModoEncendido(void);
+[v _ModoEncendido `(v ~T0 @X0 0 ef ]
+"38 ./system.h
+[; ;./system.h: 38: void digitalWrite(char pin, char value);
+[v _digitalWrite `(v ~T0 @X0 0 ef2`uc`uc ]
+"47 ./LCD16x2.h
+[; ;./LCD16x2.h: 47:     void lcdSetCursor(char row, char column);
+[v _lcdSetCursor `(v ~T0 @X0 0 ef2`uc`uc ]
+"52
+[; ;./LCD16x2.h: 52:     void lcdPrint(char *string);
+[v _lcdPrint `(v ~T0 @X0 0 ef1`*uc ]
+"13 ./ControlMotores.h
+[; ;./ControlMotores.h: 13: unsigned int Contador(unsigned int mode);
+[v _Contador `(ui ~T0 @X0 0 ef1`ui ]
+"194 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\c90\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"14 ./ControlMotores.h
+[; ;./ControlMotores.h: 14: void MotorDC(unsigned int Mode);
+[v _MotorDC `(v ~T0 @X0 0 ef1`ui ]
+"40 ./system.h
+[; ;./system.h: 40: unsigned int analogRead(char channel);
+[v _analogRead `(ui ~T0 @X0 0 ef1`uc ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 54: __asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+"61
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 61: __asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+"68
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 68: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"75
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 75: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"161
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 161: __asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+"168
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 168: __asm("PORTA equ 05h");
+[; <" PORTA equ 05h ;# ">
+"218
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 218: __asm("PORTB equ 06h");
+[; <" PORTB equ 06h ;# ">
+"280
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 280: __asm("PORTC equ 07h");
+[; <" PORTC equ 07h ;# ">
+"342
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 342: __asm("PORTD equ 08h");
+[; <" PORTD equ 08h ;# ">
+"404
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 404: __asm("PORTE equ 09h");
+[; <" PORTE equ 09h ;# ">
+"436
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 436: __asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+"456
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 456: __asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+"534
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 534: __asm("PIR1 equ 0Ch");
+[; <" PIR1 equ 0Ch ;# ">
+"596
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 596: __asm("PIR2 equ 0Dh");
+[; <" PIR2 equ 0Dh ;# ">
+"636
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 636: __asm("TMR1 equ 0Eh");
+[; <" TMR1 equ 0Eh ;# ">
+"643
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 643: __asm("TMR1L equ 0Eh");
+[; <" TMR1L equ 0Eh ;# ">
+"650
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 650: __asm("TMR1H equ 0Fh");
+[; <" TMR1H equ 0Fh ;# ">
+"657
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 657: __asm("T1CON equ 010h");
+[; <" T1CON equ 010h ;# ">
+"732
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 732: __asm("TMR2 equ 011h");
+[; <" TMR2 equ 011h ;# ">
+"739
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 739: __asm("T2CON equ 012h");
+[; <" T2CON equ 012h ;# ">
+"810
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 810: __asm("SSPBUF equ 013h");
+[; <" SSPBUF equ 013h ;# ">
+"817
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 817: __asm("SSPCON equ 014h");
+[; <" SSPCON equ 014h ;# ">
+"887
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 887: __asm("CCPR1 equ 015h");
+[; <" CCPR1 equ 015h ;# ">
+"894
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 894: __asm("CCPR1L equ 015h");
+[; <" CCPR1L equ 015h ;# ">
+"901
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 901: __asm("CCPR1H equ 016h");
+[; <" CCPR1H equ 016h ;# ">
+"908
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 908: __asm("CCP1CON equ 017h");
+[; <" CCP1CON equ 017h ;# ">
+"966
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 966: __asm("RCSTA equ 018h");
+[; <" RCSTA equ 018h ;# ">
+"1061
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 1061: __asm("TXREG equ 019h");
+[; <" TXREG equ 019h ;# ">
+"1068
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 1068: __asm("RCREG equ 01Ah");
+[; <" RCREG equ 01Ah ;# ">
+"1075
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 1075: __asm("CCPR2 equ 01Bh");
+[; <" CCPR2 equ 01Bh ;# ">
+"1082
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 1082: __asm("CCPR2L equ 01Bh");
+[; <" CCPR2L equ 01Bh ;# ">
+"1089
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 1089: __asm("CCPR2H equ 01Ch");
+[; <" CCPR2H equ 01Ch ;# ">
+"1096
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 1096: __asm("CCP2CON equ 01Dh");
+[; <" CCP2CON equ 01Dh ;# ">
+"1154
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 1154: __asm("ADRESH equ 01Eh");
+[; <" ADRESH equ 01Eh ;# ">
+"1161
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 1161: __asm("ADCON0 equ 01Fh");
+[; <" ADCON0 equ 01Fh ;# ">
+"1257
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 1257: __asm("OPTION_REG equ 081h");
+[; <" OPTION_REG equ 081h ;# ">
+"1327
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 1327: __asm("TRISA equ 085h");
+[; <" TRISA equ 085h ;# ">
+"1377
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 1377: __asm("TRISB equ 086h");
+[; <" TRISB equ 086h ;# ">
+"1439
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 1439: __asm("TRISC equ 087h");
+[; <" TRISC equ 087h ;# ">
+"1501
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 1501: __asm("TRISD equ 088h");
+[; <" TRISD equ 088h ;# ">
+"1563
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 1563: __asm("TRISE equ 089h");
+[; <" TRISE equ 089h ;# ">
+"1620
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 1620: __asm("PIE1 equ 08Ch");
+[; <" PIE1 equ 08Ch ;# ">
+"1682
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 1682: __asm("PIE2 equ 08Dh");
+[; <" PIE2 equ 08Dh ;# ">
+"1722
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 1722: __asm("PCON equ 08Eh");
+[; <" PCON equ 08Eh ;# ">
+"1756
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 1756: __asm("SSPCON2 equ 091h");
+[; <" SSPCON2 equ 091h ;# ">
+"1818
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 1818: __asm("PR2 equ 092h");
+[; <" PR2 equ 092h ;# ">
+"1825
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 1825: __asm("SSPADD equ 093h");
+[; <" SSPADD equ 093h ;# ">
+"1832
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 1832: __asm("SSPSTAT equ 094h");
+[; <" SSPSTAT equ 094h ;# ">
+"2001
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 2001: __asm("TXSTA equ 098h");
+[; <" TXSTA equ 098h ;# ">
+"2082
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 2082: __asm("SPBRG equ 099h");
+[; <" SPBRG equ 099h ;# ">
+"2089
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 2089: __asm("CMCON equ 09Ch");
+[; <" CMCON equ 09Ch ;# ">
+"2159
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 2159: __asm("CVRCON equ 09Dh");
+[; <" CVRCON equ 09Dh ;# ">
+"2224
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 2224: __asm("ADRESL equ 09Eh");
+[; <" ADRESL equ 09Eh ;# ">
+"2231
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 2231: __asm("ADCON1 equ 09Fh");
+[; <" ADCON1 equ 09Fh ;# ">
+"2290
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 2290: __asm("EEDATA equ 010Ch");
+[; <" EEDATA equ 010Ch ;# ">
+"2297
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 2297: __asm("EEADR equ 010Dh");
+[; <" EEADR equ 010Dh ;# ">
+"2304
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 2304: __asm("EEDATH equ 010Eh");
+[; <" EEDATH equ 010Eh ;# ">
+"2311
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 2311: __asm("EEADRH equ 010Fh");
+[; <" EEADRH equ 010Fh ;# ">
+"2318
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 2318: __asm("EECON1 equ 018Ch");
+[; <" EECON1 equ 018Ch ;# ">
+"2363
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h: 2363: __asm("EECON2 equ 018Dh");
+[; <" EECON2 equ 018Dh ;# ">
+"14 ./system.h
+[p x FOSC = HS ]
+"15
+[p x WDTE = OFF ]
+"16
+[p x PWRTE = OFF ]
+"17
+[p x BOREN = OFF ]
+"18
+[p x LVP = ON ]
+"19
+[p x CPD = OFF ]
+"20
+[p x WRT = OFF ]
+"21
+[p x CP = OFF ]
+"19 CodigoYoselinYDiana.c
+[; ;CodigoYoselinYDiana.c: 19: const int Rs = 14;
+[v _Rs `Ci ~T0 @X0 1 e ]
+[i _Rs
+-> 14 `i
+]
+"20
+[; ;CodigoYoselinYDiana.c: 20: const int En = 13;
+[v _En `Ci ~T0 @X0 1 e ]
+[i _En
+-> 13 `i
+]
+"21
+[; ;CodigoYoselinYDiana.c: 21: const int RW = 12;
+[v _RW `Ci ~T0 @X0 1 e ]
+[i _RW
+-> 12 `i
+]
+"23
+[; ;CodigoYoselinYDiana.c: 23: const int D4 = 11;
+[v _D4 `Ci ~T0 @X0 1 e ]
+[i _D4
+-> 11 `i
+]
+"24
+[; ;CodigoYoselinYDiana.c: 24: const int D5 = 10;
+[v _D5 `Ci ~T0 @X0 1 e ]
+[i _D5
+-> 10 `i
+]
+"25
+[; ;CodigoYoselinYDiana.c: 25: const int D6 = 9;
+[v _D6 `Ci ~T0 @X0 1 e ]
+[i _D6
+-> 9 `i
+]
+"26
+[; ;CodigoYoselinYDiana.c: 26: const int D7 = 8;
+[v _D7 `Ci ~T0 @X0 1 e ]
+[i _D7
+-> 8 `i
+]
+"28
+[; ;CodigoYoselinYDiana.c: 28: const unsigned int MotorAC = 2;
+[v _MotorAC `Cui ~T0 @X0 1 e ]
+[i _MotorAC
+-> -> 2 `i `ui
+]
+"29
+[; ;CodigoYoselinYDiana.c: 29: const unsigned int MotorDCP = 3;
+[v _MotorDCP `Cui ~T0 @X0 1 e ]
+[i _MotorDCP
+-> -> 3 `i `ui
+]
+"30
+[; ;CodigoYoselinYDiana.c: 30: const unsigned int MotorDCN = 4;
+[v _MotorDCN `Cui ~T0 @X0 1 e ]
+[i _MotorDCN
+-> -> 4 `i `ui
+]
+"32
+[; ;CodigoYoselinYDiana.c: 32: const unsigned int SensorProximidad = 1;
+[v _SensorProximidad `Cui ~T0 @X0 1 e ]
+[i _SensorProximidad
+-> -> 1 `i `ui
+]
+"33
+[; ;CodigoYoselinYDiana.c: 33: const unsigned int Alarma = 6;
+[v _Alarma `Cui ~T0 @X0 1 e ]
+[i _Alarma
+-> -> 6 `i `ui
+]
+"35
+[; ;CodigoYoselinYDiana.c: 35: const unsigned int ControlEncendido = 0;
+[v _ControlEncendido `Cui ~T0 @X0 1 e ]
+[i _ControlEncendido
+-> -> 0 `i `ui
+]
+"37
+[; ;CodigoYoselinYDiana.c: 37: char FirstROW[16];
+[v _FirstROW `uc ~T0 @X0 -> 16 `i e ]
+"38
+[; ;CodigoYoselinYDiana.c: 38: char SecondROW[16];
+[v _SecondROW `uc ~T0 @X0 -> 16 `i e ]
+"41
+[; ;CodigoYoselinYDiana.c: 41: enum Maquina Estado = Apagado;
+[v _Estado `E1062 ~T0 @X0 1 e ]
+[i _Estado
+. `E1062 1
+]
+"44
+[; ;CodigoYoselinYDiana.c: 44: void setup()
+[v _setup `(v ~T0 @X0 1 ef ]
+"45
+[; ;CodigoYoselinYDiana.c: 45: {
+{
+[e :U _setup ]
+[f ]
+"46
+[; ;CodigoYoselinYDiana.c: 46:  Estado = Apagado;
+[e = _Estado . `E1062 1 ]
+"47
+[; ;CodigoYoselinYDiana.c: 47:     lcdBegin(Rs,En,RW,D4,D5,D6,D7);
+[e ( _lcdBegin (4 , , , , , , -> _Rs `uc -> _En `uc -> _RW `uc -> _D4 `uc -> _D5 `uc -> _D6 `uc -> _D7 `uc ]
+"48
+[; ;CodigoYoselinYDiana.c: 48:     lcdClear();
+[e ( _lcdClear ..  ]
+"49
+[; ;CodigoYoselinYDiana.c: 49:  pinMode(Alarma,0);
+[e ( _pinMode (2 , -> _Alarma `uc -> -> 0 `i `uc ]
+"50
+[; ;CodigoYoselinYDiana.c: 50:     pinMode(MotorDCP,0);
+[e ( _pinMode (2 , -> _MotorDCP `uc -> -> 0 `i `uc ]
+"51
+[; ;CodigoYoselinYDiana.c: 51:     pinMode(MotorDCN,0);
+[e ( _pinMode (2 , -> _MotorDCN `uc -> -> 0 `i `uc ]
+"52
+[; ;CodigoYoselinYDiana.c: 52:     pinMode(MotorAC,0);
+[e ( _pinMode (2 , -> _MotorAC `uc -> -> 0 `i `uc ]
+"53
+[; ;CodigoYoselinYDiana.c: 53:     lcdClear();
+[e ( _lcdClear ..  ]
+"54
+[; ;CodigoYoselinYDiana.c: 54: }
+[e :UE 96 ]
+}
+"57
+[; ;CodigoYoselinYDiana.c: 57: void loop()
+[v _loop `(v ~T0 @X0 1 ef ]
+"58
+[; ;CodigoYoselinYDiana.c: 58: {
+{
+[e :U _loop ]
+[f ]
+"59
+[; ;CodigoYoselinYDiana.c: 59:  switch(Estado)
+[e $U 99  ]
+"60
+[; ;CodigoYoselinYDiana.c: 60:  {
+{
+"61
+[; ;CodigoYoselinYDiana.c: 61:   case Apagado:
+[e :U 100 ]
+"62
+[; ;CodigoYoselinYDiana.c: 62:    ModoApagado();
+[e ( _ModoApagado ..  ]
+"63
+[; ;CodigoYoselinYDiana.c: 63:    if(PBRead(ControlEncendido) == 1)
+[e $ ! == -> ( _PBRead (1 -> _ControlEncendido `uc `i -> 1 `i 101  ]
+"64
+[; ;CodigoYoselinYDiana.c: 64:    {
+{
+"65
+[; ;CodigoYoselinYDiana.c: 65:     delay(200);
+[e ( _delay (1 -> 200 `i ]
+"66
+[; ;CodigoYoselinYDiana.c: 66:     if(PBRead(ControlEncendido) == 1)
+[e $ ! == -> ( _PBRead (1 -> _ControlEncendido `uc `i -> 1 `i 102  ]
+"67
+[; ;CodigoYoselinYDiana.c: 67:     {
+{
+"68
+[; ;CodigoYoselinYDiana.c: 68:      Estado = Encendido;
+[e = _Estado . `E1062 0 ]
+"69
+[; ;CodigoYoselinYDiana.c: 69:                     lcdClear();
+[e ( _lcdClear ..  ]
+"70
+[; ;CodigoYoselinYDiana.c: 70:     }
+}
+[e :U 102 ]
+"71
+[; ;CodigoYoselinYDiana.c: 71:    }
+}
+[e $U 103  ]
+"72
+[; ;CodigoYoselinYDiana.c: 72:    else
+[e :U 101 ]
+"73
+[; ;CodigoYoselinYDiana.c: 73:    {
+{
+"74
+[; ;CodigoYoselinYDiana.c: 74:     Estado = Apagado;
+[e = _Estado . `E1062 1 ]
+"75
+[; ;CodigoYoselinYDiana.c: 75:    }
+}
+[e :U 103 ]
+"76
+[; ;CodigoYoselinYDiana.c: 76:   break;
+[e $U 98  ]
+"77
+[; ;CodigoYoselinYDiana.c: 77:   case Encendido:
+[e :U 104 ]
+"78
+[; ;CodigoYoselinYDiana.c: 78:    ModoEncendido();
+[e ( _ModoEncendido ..  ]
+"79
+[; ;CodigoYoselinYDiana.c: 79:    if(PBRead(ControlEncendido) == 1)
+[e $ ! == -> ( _PBRead (1 -> _ControlEncendido `uc `i -> 1 `i 105  ]
+"80
+[; ;CodigoYoselinYDiana.c: 80:    {
+{
+"81
+[; ;CodigoYoselinYDiana.c: 81:     delay(200);
+[e ( _delay (1 -> 200 `i ]
+"82
+[; ;CodigoYoselinYDiana.c: 82:     if(PBRead(ControlEncendido) == 1)
+[e $ ! == -> ( _PBRead (1 -> _ControlEncendido `uc `i -> 1 `i 106  ]
+"83
+[; ;CodigoYoselinYDiana.c: 83:     {
+{
+"84
+[; ;CodigoYoselinYDiana.c: 84:                     lcdClear();
+[e ( _lcdClear ..  ]
+"85
+[; ;CodigoYoselinYDiana.c: 85:                     for(char i=0;i<5;i++)
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 5 `i 107  ]
+[e $U 108  ]
+[e :U 107 ]
+"86
+[; ;CodigoYoselinYDiana.c: 86:                     {
+{
+"87
+[; ;CodigoYoselinYDiana.c: 87:                         digitalWrite(Alarma,1);
+[e ( _digitalWrite (2 , -> _Alarma `uc -> -> 1 `i `uc ]
+"88
+[; ;CodigoYoselinYDiana.c: 88:                         delay(250);
+[e ( _delay (1 -> 250 `i ]
+"89
+[; ;CodigoYoselinYDiana.c: 89:                         digitalWrite(Alarma,0);
+[e ( _digitalWrite (2 , -> _Alarma `uc -> -> 0 `i `uc ]
+"90
+[; ;CodigoYoselinYDiana.c: 90:                         delay(250);
+[e ( _delay (1 -> 250 `i ]
+"91
+[; ;CodigoYoselinYDiana.c: 91:                     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 5 `i 107  ]
+[e :U 108 ]
+}
+"92
+[; ;CodigoYoselinYDiana.c: 92:      Estado = Apagado;
+[e = _Estado . `E1062 1 ]
+"93
+[; ;CodigoYoselinYDiana.c: 93:     }
+}
+[e :U 106 ]
+"94
+[; ;CodigoYoselinYDiana.c: 94:    }
+}
+[e $U 110  ]
+"95
+[; ;CodigoYoselinYDiana.c: 95:    else
+[e :U 105 ]
+"96
+[; ;CodigoYoselinYDiana.c: 96:    {
+{
+"97
+[; ;CodigoYoselinYDiana.c: 97:     Estado = Encendido;
+[e = _Estado . `E1062 0 ]
+"98
+[; ;CodigoYoselinYDiana.c: 98:    }
+}
+[e :U 110 ]
+"99
+[; ;CodigoYoselinYDiana.c: 99:   break;
+[e $U 98  ]
+"100
+[; ;CodigoYoselinYDiana.c: 100:  }
+}
+[e $U 98  ]
+[e :U 99 ]
+[e [\ -> _Estado `ui , $ -> . `E1062 1 `ui 100
+ , $ -> . `E1062 0 `ui 104
+ 98 ]
+[e :U 98 ]
+"101
+[; ;CodigoYoselinYDiana.c: 101: }
+[e :UE 97 ]
+}
+"103
+[; ;CodigoYoselinYDiana.c: 103: void ModoApagado(void)
+[v _ModoApagado `(v ~T0 @X0 1 ef ]
+"104
+[; ;CodigoYoselinYDiana.c: 104: {
+{
+[e :U _ModoApagado ]
+[f ]
+"105
+[; ;CodigoYoselinYDiana.c: 105:     lcdSetCursor(1,1);
+[e ( _lcdSetCursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"106
+[; ;CodigoYoselinYDiana.c: 106:     lcdPrint(" Equipo Divinas ");
+[e ( _lcdPrint (1 :s 1C ]
+"107
+[; ;CodigoYoselinYDiana.c: 107:     lcdSetCursor(2,1);
+[e ( _lcdSetCursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"108
+[; ;CodigoYoselinYDiana.c: 108:     lcdPrint("18:Feb:20-5BIEE");
+[e ( _lcdPrint (1 :s 2C ]
+"113
+[; ;CodigoYoselinYDiana.c: 113: }
+[e :UE 111 ]
+}
+"115
+[; ;CodigoYoselinYDiana.c: 115: void ModoEncendido(void)
+[v _ModoEncendido `(v ~T0 @X0 1 ef ]
+"116
+[; ;CodigoYoselinYDiana.c: 116: {
+{
+[e :U _ModoEncendido ]
+[f ]
+"117
+[; ;CodigoYoselinYDiana.c: 117:     static int contar;
+[v F1071 `i ~T0 @X0 1 s contar ]
+"118
+[; ;CodigoYoselinYDiana.c: 118:  contar = Contador(0);
+[e = F1071 -> ( _Contador (1 -> -> 0 `i `ui `i ]
+"119
+[; ;CodigoYoselinYDiana.c: 119:     lcdSetCursor(1,1);
+[e ( _lcdSetCursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"120
+[; ;CodigoYoselinYDiana.c: 120:     sprintf(FirstROW,"Contador %i: ",contar);
+[e ( _sprintf (1 , (. , &U _FirstROW :s 3C F1071 ]
+"121
+[; ;CodigoYoselinYDiana.c: 121:     lcdPrint(FirstROW);
+[e ( _lcdPrint (1 &U _FirstROW ]
+"122
+[; ;CodigoYoselinYDiana.c: 122:     lcdSetCursor(2,1);
+[e ( _lcdSetCursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"123
+[; ;CodigoYoselinYDiana.c: 123:  switch(contar)
+[e $U 114  ]
+"124
+[; ;CodigoYoselinYDiana.c: 124:  {
+{
+"125
+[; ;CodigoYoselinYDiana.c: 125:   case 0:
+[e :U 115 ]
+"126
+[; ;CodigoYoselinYDiana.c: 126:    digitalWrite(MotorAC,0);
+[e ( _digitalWrite (2 , -> _MotorAC `uc -> -> 0 `i `uc ]
+"127
+[; ;CodigoYoselinYDiana.c: 127:    MotorDC(0);
+[e ( _MotorDC (1 -> -> 0 `i `ui ]
+"128
+[; ;CodigoYoselinYDiana.c: 128:             lcdPrint("DC-OFF/AC-OFF");
+[e ( _lcdPrint (1 :s 4C ]
+"129
+[; ;CodigoYoselinYDiana.c: 129:   break;
+[e $U 113  ]
+"130
+[; ;CodigoYoselinYDiana.c: 130:   case 1:
+[e :U 116 ]
+"131
+[; ;CodigoYoselinYDiana.c: 131:    digitalWrite(MotorAC,1);
+[e ( _digitalWrite (2 , -> _MotorAC `uc -> -> 1 `i `uc ]
+"132
+[; ;CodigoYoselinYDiana.c: 132:    MotorDC(2);
+[e ( _MotorDC (1 -> -> 2 `i `ui ]
+"134
+[; ;CodigoYoselinYDiana.c: 134:             lcdPrint("DC-DER/AC-ON ");
+[e ( _lcdPrint (1 :s 5C ]
+"135
+[; ;CodigoYoselinYDiana.c: 135:   break;
+[e $U 113  ]
+"136
+[; ;CodigoYoselinYDiana.c: 136:   case 2:
+[e :U 117 ]
+"137
+[; ;CodigoYoselinYDiana.c: 137:    digitalWrite(MotorAC,0);
+[e ( _digitalWrite (2 , -> _MotorAC `uc -> -> 0 `i `uc ]
+"138
+[; ;CodigoYoselinYDiana.c: 138:    MotorDC(2);
+[e ( _MotorDC (1 -> -> 2 `i `ui ]
+"139
+[; ;CodigoYoselinYDiana.c: 139:             lcdPrint("DC-DER/AC-OFF");
+[e ( _lcdPrint (1 :s 6C ]
+"140
+[; ;CodigoYoselinYDiana.c: 140:   break;
+[e $U 113  ]
+"141
+[; ;CodigoYoselinYDiana.c: 141:   case 3:
+[e :U 118 ]
+"142
+[; ;CodigoYoselinYDiana.c: 142:    digitalWrite(MotorAC,1);
+[e ( _digitalWrite (2 , -> _MotorAC `uc -> -> 1 `i `uc ]
+"143
+[; ;CodigoYoselinYDiana.c: 143:    MotorDC(0);
+[e ( _MotorDC (1 -> -> 0 `i `ui ]
+"144
+[; ;CodigoYoselinYDiana.c: 144:             lcdPrint("DC-OFF/AC-ON ");
+[e ( _lcdPrint (1 :s 7C ]
+"145
+[; ;CodigoYoselinYDiana.c: 145:   break;
+[e $U 113  ]
+"146
+[; ;CodigoYoselinYDiana.c: 146:   case 4:
+[e :U 119 ]
+"147
+[; ;CodigoYoselinYDiana.c: 147:    digitalWrite(MotorAC,1);
+[e ( _digitalWrite (2 , -> _MotorAC `uc -> -> 1 `i `uc ]
+"148
+[; ;CodigoYoselinYDiana.c: 148:    MotorDC(1);
+[e ( _MotorDC (1 -> -> 1 `i `ui ]
+"149
+[; ;CodigoYoselinYDiana.c: 149:             lcdPrint("DC-IZQ/AC-ON ");
+[e ( _lcdPrint (1 :s 8C ]
+"150
+[; ;CodigoYoselinYDiana.c: 150:   break;
+[e $U 113  ]
+"151
+[; ;CodigoYoselinYDiana.c: 151:   case 5:
+[e :U 120 ]
+"152
+[; ;CodigoYoselinYDiana.c: 152:    contar = Contador(1);
+[e = F1071 -> ( _Contador (1 -> -> 1 `i `ui `i ]
+"153
+[; ;CodigoYoselinYDiana.c: 153:   break;
+[e $U 113  ]
+"154
+[; ;CodigoYoselinYDiana.c: 154:  }
+}
+[e $U 113  ]
+[e :U 114 ]
+[e [\ F1071 , $ -> 0 `i 115
+ , $ -> 1 `i 116
+ , $ -> 2 `i 117
+ , $ -> 3 `i 118
+ , $ -> 4 `i 119
+ , $ -> 5 `i 120
+ 113 ]
+[e :U 113 ]
+"155
+[; ;CodigoYoselinYDiana.c: 155: }
+[e :UE 112 ]
+}
+"156
+[; ;CodigoYoselinYDiana.c: 156: unsigned int Contador(unsigned int mode)
+[v _Contador `(ui ~T0 @X0 1 ef1`ui ]
+"157
+[; ;CodigoYoselinYDiana.c: 157: {
+{
+[e :U _Contador ]
+"156
+[; ;CodigoYoselinYDiana.c: 156: unsigned int Contador(unsigned int mode)
+[v _mode `ui ~T0 @X0 1 r1 ]
+"157
+[; ;CodigoYoselinYDiana.c: 157: {
+[f ]
+"158
+[; ;CodigoYoselinYDiana.c: 158:     const unsigned int Threshold = 20;
+[v F1074 `Cui ~T0 @X0 1 s Threshold ]
+[i F1074
+-> -> 20 `i `ui
+]
+"159
+[; ;CodigoYoselinYDiana.c: 159:  static int cuenta;
+[v F1075 `i ~T0 @X0 1 s cuenta ]
+"160
+[; ;CodigoYoselinYDiana.c: 160:  if(mode == 0)
+[e $ ! == _mode -> -> 0 `i `ui 122  ]
+"161
+[; ;CodigoYoselinYDiana.c: 161:  {
+{
+"162
+[; ;CodigoYoselinYDiana.c: 162:   if(analogRead(SensorProximidad) >= Threshold)
+[e $ ! >= ( _analogRead (1 -> _SensorProximidad `uc F1074 123  ]
+"163
+[; ;CodigoYoselinYDiana.c: 163:         {
+{
+"164
+[; ;CodigoYoselinYDiana.c: 164:             delay(15);
+[e ( _delay (1 -> 15 `i ]
+"165
+[; ;CodigoYoselinYDiana.c: 165:             if(analogRead(SensorProximidad) >= Threshold)
+[e $ ! >= ( _analogRead (1 -> _SensorProximidad `uc F1074 124  ]
+"166
+[; ;CodigoYoselinYDiana.c: 166:             {
+{
+"167
+[; ;CodigoYoselinYDiana.c: 167:                 return cuenta++;
+[e ) -> ++ F1075 -> 1 `i `ui ]
+[e $UE 121  ]
+"168
+[; ;CodigoYoselinYDiana.c: 168:             }
+}
+[e :U 124 ]
+"169
+[; ;CodigoYoselinYDiana.c: 169:         }
+}
+[e $U 125  ]
+"170
+[; ;CodigoYoselinYDiana.c: 170:         else
+[e :U 123 ]
+"171
+[; ;CodigoYoselinYDiana.c: 171:         {
+{
+"172
+[; ;CodigoYoselinYDiana.c: 172:             return cuenta;
+[e ) -> F1075 `ui ]
+[e $UE 121  ]
+"173
+[; ;CodigoYoselinYDiana.c: 173:         }
+}
+[e :U 125 ]
+"174
+[; ;CodigoYoselinYDiana.c: 174:  }
+}
+[e $U 126  ]
+"175
+[; ;CodigoYoselinYDiana.c: 175:  else if(mode == 1)
+[e :U 122 ]
+[e $ ! == _mode -> -> 1 `i `ui 127  ]
+"176
+[; ;CodigoYoselinYDiana.c: 176:  {
+{
+"177
+[; ;CodigoYoselinYDiana.c: 177:         cuenta = 0;
+[e = F1075 -> 0 `i ]
+"178
+[; ;CodigoYoselinYDiana.c: 178:   return 0;
+[e ) -> -> 0 `i `ui ]
+[e $UE 121  ]
+"179
+[; ;CodigoYoselinYDiana.c: 179:  }
+}
+[e :U 127 ]
+[e :U 126 ]
+"180
+[; ;CodigoYoselinYDiana.c: 180: }
+[e :UE 121 ]
+}
+"182
+[; ;CodigoYoselinYDiana.c: 182: void MotorDC(unsigned int Mode)
+[v _MotorDC `(v ~T0 @X0 1 ef1`ui ]
+"183
+[; ;CodigoYoselinYDiana.c: 183: {
+{
+[e :U _MotorDC ]
+"182
+[; ;CodigoYoselinYDiana.c: 182: void MotorDC(unsigned int Mode)
+[v _Mode `ui ~T0 @X0 1 r1 ]
+"183
+[; ;CodigoYoselinYDiana.c: 183: {
+[f ]
+"184
+[; ;CodigoYoselinYDiana.c: 184:  switch(Mode)
+[e $U 130  ]
+"185
+[; ;CodigoYoselinYDiana.c: 185:  {
+{
+"186
+[; ;CodigoYoselinYDiana.c: 186:   case 1:
+[e :U 131 ]
+"187
+[; ;CodigoYoselinYDiana.c: 187:    digitalWrite(MotorDCN,1);
+[e ( _digitalWrite (2 , -> _MotorDCN `uc -> -> 1 `i `uc ]
+"188
+[; ;CodigoYoselinYDiana.c: 188:    digitalWrite(MotorDCP,0);
+[e ( _digitalWrite (2 , -> _MotorDCP `uc -> -> 0 `i `uc ]
+"189
+[; ;CodigoYoselinYDiana.c: 189:   break;
+[e $U 129  ]
+"190
+[; ;CodigoYoselinYDiana.c: 190:   case 2:
+[e :U 132 ]
+"191
+[; ;CodigoYoselinYDiana.c: 191:    digitalWrite(MotorDCN,0);
+[e ( _digitalWrite (2 , -> _MotorDCN `uc -> -> 0 `i `uc ]
+"192
+[; ;CodigoYoselinYDiana.c: 192:    digitalWrite(MotorDCP,1);
+[e ( _digitalWrite (2 , -> _MotorDCP `uc -> -> 1 `i `uc ]
+"193
+[; ;CodigoYoselinYDiana.c: 193:   break;
+[e $U 129  ]
+"194
+[; ;CodigoYoselinYDiana.c: 194:   case 0:
+[e :U 133 ]
+"195
+[; ;CodigoYoselinYDiana.c: 195:    digitalWrite(MotorDCN,0);
+[e ( _digitalWrite (2 , -> _MotorDCN `uc -> -> 0 `i `uc ]
+"196
+[; ;CodigoYoselinYDiana.c: 196:    digitalWrite(MotorDCP,0);
+[e ( _digitalWrite (2 , -> _MotorDCP `uc -> -> 0 `i `uc ]
+"197
+[; ;CodigoYoselinYDiana.c: 197:   break;
+[e $U 129  ]
+"198
+[; ;CodigoYoselinYDiana.c: 198:  }
+}
+[e $U 129  ]
+[e :U 130 ]
+[e [\ _Mode , $ -> -> 1 `i `ui 131
+ , $ -> -> 2 `i `ui 132
+ , $ -> -> 0 `i `ui 133
+ 129 ]
+[e :U 129 ]
+"199
+[; ;CodigoYoselinYDiana.c: 199: }
+[e :UE 128 ]
+}
+[p f _sprintf 8388736 ]
+[a 6C 68 67 45 68 69 82 47 65 67 45 79 70 70 0 ]
+[a 4C 68 67 45 79 70 70 47 65 67 45 79 70 70 0 ]
+[a 2C 49 56 58 70 101 98 58 50 48 45 53 66 73 69 69 0 ]
+[a 1C 32 69 113 117 105 112 111 32 68 105 118 105 110 97 115 32 0 ]
+[a 5C 68 67 45 68 69 82 47 65 67 45 79 78 32 0 ]
+[a 8C 68 67 45 73 90 81 47 65 67 45 79 78 32 0 ]
+[a 7C 68 67 45 79 70 70 47 65 67 45 79 78 32 0 ]
+[a 3C 67 111 110 116 97 100 111 114 32 37 105 58 32 0 ]
