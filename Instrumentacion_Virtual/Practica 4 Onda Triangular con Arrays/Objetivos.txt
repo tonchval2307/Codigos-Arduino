@@ -1,0 +1,2 @@
+1. Usar y conocer el funcionamiento de los Arreglos de Datos.
+2. Manejo de Recursos (Arduino).

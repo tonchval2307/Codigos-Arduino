@@ -1,0 +1,4 @@
+1. Reafirmar conocimiento de programacion en C++.
+2. reafirmar programacion en Arduino.
+3. Uso de Protocolos de comunicacion de circuitos integrados.
+4. Uso de los Sub Instrumentos Virtuales.

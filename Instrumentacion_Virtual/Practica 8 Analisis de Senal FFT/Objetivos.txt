@@ -1,0 +1,2 @@
+1. Visualizacion Avanzada de datos usando WFM Graph.
+2. Procesamiento Avanzado de Senales usando la transformada rapida de fourier.

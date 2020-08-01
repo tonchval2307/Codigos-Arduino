@@ -1,0 +1,4 @@
+1. Saber Usar un Transistor MOSFET como Switch.
+2. Uso de la Senal PWM para variar la senal de intensidad en una carga.
+3. Manejo de recursos.
+4. Visualizacion de datos Mediante WFM Graph

@@ -1,0 +1,2 @@
+1. Adquisiscion de Datos Analogicos.
+2. Vizualizacion de Datos Analogicos.
