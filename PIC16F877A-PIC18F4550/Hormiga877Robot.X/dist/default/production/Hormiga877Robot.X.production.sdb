@@ -1,0 +1,467 @@
+[p LITE_MODE AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 6 ]
+"14 D:\Documents\Hormiga877Robot.X\application.c
+[v _setup setup `(v  1 e 1 0 ]
+"22
+[v _loop loop `(v  1 e 1 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"9 D:\Documents\Hormiga877Robot.X\RobotMovimientos.c
+[v _L298NInit L298NInit `(i  1 e 2 0 ]
+"25
+[v _Adelante Adelante `(v  1 e 1 0 ]
+"36
+[v _Atras Atras `(v  1 e 1 0 ]
+"46
+[v _Izquierda Izquierda `(v  1 e 1 0 ]
+"56
+[v _Derecha Derecha `(v  1 e 1 0 ]
+"66
+[v _Detener Detener `(v  1 e 1 0 ]
+"7 D:\Documents\Hormiga877Robot.X\source.c
+[v _main main `(i  1 e 2 0 ]
+"18
+[v _Initialization Initialization `(v  1 e 1 0 ]
+"44
+[v _CCP1Configuration CCP1Configuration `(v  1 e 1 0 ]
+"55
+[v _CCP2Configuration CCP2Configuration `(v  1 e 1 0 ]
+"63
+[v _pinMode pinMode `(v  1 e 1 0 ]
+"169
+[v _digitalWrite digitalWrite `(v  1 e 1 0 ]
+"410
+[v _analogWrite analogWrite `(uc  1 e 1 0 ]
+"450
+[v _SerialBegin SerialBegin `(uc  1 e 1 0 ]
+"511
+[v _SerialWrite SerialWrite `(v  1 e 1 0 ]
+"532
+[v _SerialPrintLn SerialPrintLn `(v  1 e 1 0 ]
+"541
+[v _SerialAvailable SerialAvailable `(uc  1 e 1 0 ]
+"546
+[v _SerialRead SerialRead `(uc  1 e 1 0 ]
+"587
+[v _I2CMasterWaiting I2CMasterWaiting `(v  1 e 1 0 ]
+"4 D:\Documents\Hormiga877Robot.X\application.c
+[v _VelocidadA VelocidadA `uc  1 e 1 0 ]
+"5
+[v _VelocidadB VelocidadB `uc  1 e 1 0 ]
+"7
+[v _InUno InUno `uc  1 e 1 0 ]
+"8
+[v _InDos InDos `uc  1 e 1 0 ]
+"9
+[v _InTres InTres `uc  1 e 1 0 ]
+"10
+[v _InCuatro InCuatro `uc  1 e 1 0 ]
+"11
+[v _Led Led `uc  1 e 1 0 ]
+"12
+[v _data data `uc  1 e 1 0 ]
+[s S193 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+]
+"181 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f877a.h
+[u S200 . 1 `S193 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES200  1 e 1 @5 ]
+[s S151 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"233
+[u S160 . 1 `S151 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES160  1 e 1 @6 ]
+[s S130 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"295
+[u S139 . 1 `S130 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES139  1 e 1 @7 ]
+[s S172 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+"357
+[u S181 . 1 `S172 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES181  1 e 1 @8 ]
+"402
+[v _PORTE PORTE `VEuc  1 e 1 @9 ]
+[s S264 . 1 `uc 1 RE0 1 0 :1:0 
+`uc 1 RE1 1 0 :1:1 
+`uc 1 RE2 1 0 :1:2 
+]
+"414
+[u S268 . 1 `S264 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES268  1 e 1 @9 ]
+"737
+[v _T2CON T2CON `VEuc  1 e 1 @18 ]
+"808
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
+"815
+[v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
+"892
+[v _CCPR1L CCPR1L `VEuc  1 e 1 @21 ]
+"906
+[v _CCP1CON CCP1CON `VEuc  1 e 1 @23 ]
+"1059
+[v _TXREG TXREG `VEuc  1 e 1 @25 ]
+"1066
+[v _RCREG RCREG `VEuc  1 e 1 @26 ]
+"1080
+[v _CCPR2L CCPR2L `VEuc  1 e 1 @27 ]
+"1094
+[v _CCP2CON CCP2CON `VEuc  1 e 1 @29 ]
+"1152
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+"1159
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @31 ]
+[s S210 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 GO_nDONE 1 0 :1:2 
+`uc 1 CHS 1 0 :3:3 
+`uc 1 ADCS 1 0 :2:6 
+]
+"1190
+[s S216 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 GO 1 0 :1:2 
+`uc 1 CHS0 1 0 :1:3 
+`uc 1 CHS1 1 0 :1:4 
+`uc 1 CHS2 1 0 :1:5 
+`uc 1 ADCS0 1 0 :1:6 
+`uc 1 ADCS1 1 0 :1:7 
+]
+[s S224 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nDONE 1 0 :1:2 
+]
+[s S227 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 GO_DONE 1 0 :1:2 
+]
+[u S230 . 1 `S210 1 . 1 0 `S216 1 . 1 0 `S224 1 . 1 0 `S227 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES230  1 e 1 @31 ]
+[s S113 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+]
+"1340
+[u S120 . 1 `S113 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES120  1 e 1 @133 ]
+[s S71 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"1392
+[u S80 . 1 `S71 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES80  1 e 1 @134 ]
+[s S50 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"1454
+[u S59 . 1 `S50 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES59  1 e 1 @135 ]
+[s S92 . 1 `uc 1 TRISD0 1 0 :1:0 
+`uc 1 TRISD1 1 0 :1:1 
+`uc 1 TRISD2 1 0 :1:2 
+`uc 1 TRISD3 1 0 :1:3 
+`uc 1 TRISD4 1 0 :1:4 
+`uc 1 TRISD5 1 0 :1:5 
+`uc 1 TRISD6 1 0 :1:6 
+`uc 1 TRISD7 1 0 :1:7 
+]
+"1516
+[u S101 . 1 `S92 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES101  1 e 1 @136 ]
+"1561
+[v _TRISE TRISE `VEuc  1 e 1 @137 ]
+"1754
+[v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
+"1816
+[v _PR2 PR2 `VEuc  1 e 1 @146 ]
+"1823
+[v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
+"1830
+[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
+"2080
+[v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
+"2222
+[v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
+"2229
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @159 ]
+"2374
+[v _ACKDT ACKDT `VEb  1 e 0 @1165 ]
+"2377
+[v _ACKEN ACKEN `VEb  1 e 0 @1164 ]
+"2416
+[v _BRGH BRGH `VEb  1 e 0 @1218 ]
+"2452
+[v _CCP1X CCP1X `VEb  1 e 0 @189 ]
+"2455
+[v _CCP1Y CCP1Y `VEb  1 e 0 @188 ]
+"2476
+[v _CCP2X CCP2X `VEb  1 e 0 @237 ]
+"2479
+[v _CCP2Y CCP2Y `VEb  1 e 0 @236 ]
+"2515
+[v _CREN CREN `VEb  1 e 0 @196 ]
+"2563
+[v _FERR FERR `VEb  1 e 0 @194 ]
+"2569
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"2614
+[v _OERR OERR `VEb  1 e 0 @193 ]
+"2629
+[v _PEIE PEIE `VEb  1 e 0 @94 ]
+"2632
+[v _PEN PEN `VEb  1 e 0 @1162 ]
+"2737
+[v _RCEN RCEN `VEb  1 e 0 @1163 ]
+"2743
+[v _RCIF RCIF `VEb  1 e 0 @101 ]
+"2791
+[v _RSEN RSEN `VEb  1 e 0 @1161 ]
+"2806
+[v _SEN SEN `VEb  1 e 0 @1160 ]
+"2812
+[v _SPEN SPEN `VEb  1 e 0 @199 ]
+"2821
+[v _SSPIE SSPIE `VEb  1 e 0 @1123 ]
+"2824
+[v _SSPIF SSPIF `VEb  1 e 0 @99 ]
+"2842
+[v _SYNC SYNC `VEb  1 e 0 @1220 ]
+"2968
+[v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
+"2971
+[v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
+"2977
+[v _TRISC6 TRISC6 `VEb  1 e 0 @1086 ]
+"2980
+[v _TRISC7 TRISC7 `VEb  1 e 0 @1087 ]
+"3016
+[v _TRMT TRMT `VEb  1 e 0 @1217 ]
+"3031
+[v _TXEN TXEN `VEb  1 e 0 @1221 ]
+"3037
+[v _TXIF TXIF `VEb  1 e 0 @100 ]
+"2 D:\Documents\Hormiga877Robot.X\RobotMovimientos.c
+[v _in1 in1 `uc  1 e 1 0 ]
+"3
+[v _in2 in2 `uc  1 e 1 0 ]
+"4
+[v _in3 in3 `uc  1 e 1 0 ]
+"5
+[v _in4 in4 `uc  1 e 1 0 ]
+"6
+[v _va va `uc  1 e 1 0 ]
+"7
+[v _vb vb `uc  1 e 1 0 ]
+"7 D:\Documents\Hormiga877Robot.X\source.c
+[v _main main `(i  1 e 2 0 ]
+{
+"16
+} 0
+"14 D:\Documents\Hormiga877Robot.X\application.c
+[v _setup setup `(v  1 e 1 0 ]
+{
+"20
+} 0
+"450 D:\Documents\Hormiga877Robot.X\source.c
+[v _SerialBegin SerialBegin `(uc  1 e 1 0 ]
+{
+"455
+[v SerialBegin@x x `ui  1 a 2 10 ]
+"450
+[v SerialBegin@BaudRate BaudRate `DCl  1 p 4 6 ]
+"486
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+{
+"10
+[v ___aldiv@quotient quotient `l  1 a 4 2 ]
+"11
+[v ___aldiv@sign sign `uc  1 a 1 1 ]
+[v ___aldiv@counter counter `uc  1 a 1 0 ]
+"5
+[v ___aldiv@divisor divisor `l  1 p 4 0 ]
+[v ___aldiv@dividend dividend `l  1 p 4 4 ]
+"41
+} 0
+"9 D:\Documents\Hormiga877Robot.X\RobotMovimientos.c
+[v _L298NInit L298NInit `(i  1 e 2 0 ]
+{
+[v L298NInit@ina ina `uc  1 a 1 wreg ]
+[v L298NInit@ina ina `uc  1 a 1 wreg ]
+[v L298NInit@inb inb `uc  1 p 1 4 ]
+[v L298NInit@inc inc `uc  1 p 1 5 ]
+[v L298NInit@ind ind `uc  1 p 1 6 ]
+[v L298NInit@VelA VelA `i  1 p 2 7 ]
+[v L298NInit@VelB VelB `i  1 p 2 9 ]
+"11
+[v L298NInit@ina ina `uc  1 a 1 12 ]
+"24
+} 0
+"63 D:\Documents\Hormiga877Robot.X\source.c
+[v _pinMode pinMode `(v  1 e 1 0 ]
+{
+[v pinMode@pin pin `uc  1 a 1 wreg ]
+[v pinMode@pin pin `uc  1 a 1 wreg ]
+[v pinMode@mode mode `uc  1 p 1 0 ]
+[v pinMode@pin pin `uc  1 a 1 3 ]
+"168
+} 0
+"22 D:\Documents\Hormiga877Robot.X\application.c
+[v _loop loop `(v  1 e 1 0 ]
+{
+"59
+} 0
+"546 D:\Documents\Hormiga877Robot.X\source.c
+[v _SerialRead SerialRead `(uc  1 e 1 0 ]
+{
+"550
+} 0
+"532
+[v _SerialPrintLn SerialPrintLn `(v  1 e 1 0 ]
+{
+[v SerialPrintLn@dataText dataText `*.24uc  1 a 1 wreg ]
+"534
+[v SerialPrintLn@i i `ui  1 a 2 1 ]
+"532
+[v SerialPrintLn@dataText dataText `*.24uc  1 a 1 wreg ]
+"535
+[v SerialPrintLn@dataText dataText `*.24uc  1 a 1 3 ]
+"540
+} 0
+"511
+[v _SerialWrite SerialWrite `(v  1 e 1 0 ]
+{
+[v SerialWrite@dataWrite dataWrite `uc  1 a 1 wreg ]
+[v SerialWrite@dataWrite dataWrite `uc  1 a 1 wreg ]
+[v SerialWrite@dataWrite dataWrite `uc  1 a 1 0 ]
+"515
+} 0
+"541
+[v _SerialAvailable SerialAvailable `(uc  1 e 1 0 ]
+{
+"544
+} 0
+"46 D:\Documents\Hormiga877Robot.X\RobotMovimientos.c
+[v _Izquierda Izquierda `(v  1 e 1 0 ]
+{
+[v Izquierda@Vel Vel `ui  1 p 2 6 ]
+"54
+} 0
+"66
+[v _Detener Detener `(v  1 e 1 0 ]
+{
+"74
+} 0
+"56
+[v _Derecha Derecha `(v  1 e 1 0 ]
+{
+[v Derecha@Vel Vel `ui  1 p 2 6 ]
+"64
+} 0
+"36
+[v _Atras Atras `(v  1 e 1 0 ]
+{
+[v Atras@Vel Vel `ui  1 p 2 6 ]
+"44
+} 0
+"25
+[v _Adelante Adelante `(v  1 e 1 0 ]
+{
+[v Adelante@Vel Vel `ui  1 p 2 6 ]
+"34
+} 0
+"169 D:\Documents\Hormiga877Robot.X\source.c
+[v _digitalWrite digitalWrite `(v  1 e 1 0 ]
+{
+[v digitalWrite@pin pin `uc  1 a 1 wreg ]
+[v digitalWrite@pin pin `uc  1 a 1 wreg ]
+[v digitalWrite@value value `uc  1 p 1 0 ]
+[v digitalWrite@pin pin `uc  1 a 1 3 ]
+"259
+} 0
+"410
+[v _analogWrite analogWrite `(uc  1 e 1 0 ]
+{
+[v analogWrite@pin pin `uc  1 a 1 wreg ]
+"412
+[v analogWrite@MSB MSB `uc  1 a 1 4 ]
+"410
+[v analogWrite@pin pin `uc  1 a 1 wreg ]
+[v analogWrite@value value `ui  1 p 2 0 ]
+"412
+[v analogWrite@pin pin `uc  1 a 1 5 ]
+"429
+} 0
+"18
+[v _Initialization Initialization `(v  1 e 1 0 ]
+{
+"43
+} 0
+"55
+[v _CCP2Configuration CCP2Configuration `(v  1 e 1 0 ]
+{
+"58
+} 0
+"44
+[v _CCP1Configuration CCP1Configuration `(v  1 e 1 0 ]
+{
+"49
+} 0
