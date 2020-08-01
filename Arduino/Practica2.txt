@@ -1,0 +1,146 @@
+#include<Keypad.h>
+#include <LiquidCrystal.h>
+
+/*
+ *  Practica 2. Control de Velocidad de Motores de C.C.
+ *  Lectura se Anota en el LCD.
+ *  Graficar las Velocidades en RPM del Motor contra el Voltaje de Alimentacion.
+ *  
+ */
+const byte rows = 4; //four rows
+const byte cols = 4; //three columns
+char keys[rows][cols] = {
+  {'1','2','3','A'},
+  {'4','5','6','B'},
+  {'7','8','9','C'},
+  {'#','0','*','D'}
+};
+byte rowPins[rows] = {23, 25, 27, 29}; //connect to the row pinouts of the keypad
+byte colPins[cols] = {22, 24, 26, 28}; //connect to the column pinouts of the keypad
+
+const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+Keypad Teclado = Keypad( makeKeymap(keys), rowPins, colPins, rows, cols );
+
+enum Comportamiento{Configuracion, Runing};
+enum Comportamiento Estado;
+
+int pinMotor = 6;
+int RPMNumber[2];
+int RPMs = 0; //SetPoint
+int pinEncoder = 7;
+int counter = 0;
+char key;
+
+//controller constants
+double MaxIerror = 100;
+double MinIerror = -100;
+//controller
+unsigned long currentTime, previousTime;
+double elapsedTime;
+double error;
+double LastError;
+
+double kp = 10;
+double kd = 00.1;
+double ki = 0.2;
+
+int AccionControl;
+double SensorVel;
+double cumError,rateError;
+
+void setup() {
+  // put your setup code here, to run once:
+  lcd.begin(16, 2);
+  pinMode(pinMotor,OUTPUT);
+  pinMode(pinEncoder,INPUT_PULLUP);
+  Estado = Configuracion;
+  lcd.setCursor(0,0);
+  lcd.print("P-2 : Cntrl RPMs");
+  lcd.setCursor(0,1);
+  for(int i=0;i<16;i++)
+  {
+    lcd.print(".");
+    delay(250);
+  }
+  lcd.clear();
+  lcd.setCursor(0,0);
+  lcd.print("Ingresr Valores:");
+  delay(2000);
+  lcd.clear();
+}
+
+void loop() {
+
+    switch(Estado)
+    {
+      case Configuracion:
+        lcd.setCursor(0,0);
+        lcd.print("-Ingrese RMPs SP");
+        while(counter < 2)
+        {
+          key = Teclado.getKey();
+          if(key != NO_KEY)
+          {
+            if(key != 'A')
+            {
+              RPMNumber[counter] = key - 48;
+              lcd.setCursor(counter + 2,1);
+              lcd.print(RPMNumber[counter]);
+            }
+            else
+            {
+              counter++;
+            }
+          }
+        }
+        RPMs = (RPMNumber[0] * 10) + RPMNumber[1];
+        delay(2000);
+        lcd.clear();
+        lcd.setCursor(0,0);
+        lcd.print("Valor-SP-Meter--");
+        lcd.setCursor(0,1);
+        lcd.print("RPMs :");
+        lcd.print(RPMs);
+        Estado = Runing;
+      break;
+      case Runing:
+        for(int i=0;i<10;i++)
+        {
+          SensorVel += pulseIn(pinEncoder,HIGH);
+          SensorVel += pulseIn(pinEncoder,LOW);
+        }
+        SensorVel = SensorVel / 20; 
+        SensorVel = SensorVel /  1000;
+        SensorVel = 120 / SensorVel;
+        AccionControl = computePID(SensorVel);
+        AccionControl = map(AccionControl,-8000,8000,0,255);
+        analogWrite(pinMotor,AccionControl);
+        lcd.setCursor(9,1);
+        lcd.print(SensorVel);
+        key = Teclado.getKey();
+        SensorVel = 0;
+        if(key == 'A')
+        {
+          Estado = Configuracion;
+          analogWrite(pinMotor,0);
+          lcd.clear();
+          counter = 0;
+        }
+      break;
+    }
+
+}
+
+double computePID(double inp)
+{
+  currentTime = millis();
+  elapsedTime = (double)(currentTime - previousTime);
+  error = RPMs - inp;
+  cumError +=error * elapsedTime;
+  rateError = (error - LastError) / elapsedTime;
+  double out = (kp*error) + (ki*cumError) + (kd*rateError);
+  LastError = error;
+  previousTime = currentTime;
+  return out;
+}
